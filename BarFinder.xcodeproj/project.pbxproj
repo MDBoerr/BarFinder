@@ -12,6 +12,7 @@
 		27E59BE41DB7AC91007CBF00 /* AddBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E59BE31DB7AC91007CBF00 /* AddBarController.swift */; };
 		27E59BE61DB7ACDB007CBF00 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E59BE51DB7ACDB007CBF00 /* DetailViewController.swift */; };
 		27E59BEA1DB7ACF9007CBF00 /* ImageStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E59BE91DB7ACF9007CBF00 /* ImageStoreController.swift */; };
+		27E59BED1DB7AFEF007CBF00 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E59BEC1DB7AFEF007CBF00 /* MapKit.framework */; };
 		4E8636831DB79C090019691C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8636821DB79C090019691C /* AppDelegate.swift */; };
 		4E8636881DB79C090019691C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E8636861DB79C090019691C /* Main.storyboard */; };
 		4E86368A1DB79C090019691C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E8636891DB79C090019691C /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		27E59BE31DB7AC91007CBF00 /* AddBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBarController.swift; sourceTree = "<group>"; };
 		27E59BE51DB7ACDB007CBF00 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		27E59BE91DB7ACF9007CBF00 /* ImageStoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageStoreController.swift; path = ../ImageStoreController.swift; sourceTree = "<group>"; };
+		27E59BEC1DB7AFEF007CBF00 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4E86367F1DB79C090019691C /* BarFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8636821DB79C090019691C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E8636871DB79C090019691C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -37,17 +39,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27E59BED1DB7AFEF007CBF00 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27E59BEB1DB7AFEF007CBF00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27E59BEC1DB7AFEF007CBF00 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4E8636761DB79C080019691C = {
 			isa = PBXGroup;
 			children = (
 				4E8636811DB79C090019691C /* BarFinder */,
 				4E8636801DB79C090019691C /* Products */,
+				27E59BEB1DB7AFEF007CBF00 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
