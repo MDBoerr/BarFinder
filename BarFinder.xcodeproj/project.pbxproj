@@ -13,6 +13,8 @@
 		27E59BE61DB7ACDB007CBF00 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E59BE51DB7ACDB007CBF00 /* DetailViewController.swift */; };
 		27E59BEA1DB7ACF9007CBF00 /* ImageStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E59BE91DB7ACF9007CBF00 /* ImageStoreController.swift */; };
 		27E59BED1DB7AFEF007CBF00 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E59BEC1DB7AFEF007CBF00 /* MapKit.framework */; };
+		4E2BC6FC1DB7CC730093C59F /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2BC6FB1DB7CC730093C59F /* Bar.swift */; };
+		4E2BC6FE1DB7CC8D0093C59F /* BarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2BC6FD1DB7CC8D0093C59F /* BarStore.swift */; };
 		4E8636831DB79C090019691C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8636821DB79C090019691C /* AppDelegate.swift */; };
 		4E8636881DB79C090019691C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E8636861DB79C090019691C /* Main.storyboard */; };
 		4E86368A1DB79C090019691C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E8636891DB79C090019691C /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 		27E59BE51DB7ACDB007CBF00 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		27E59BE91DB7ACF9007CBF00 /* ImageStoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageStoreController.swift; path = ../ImageStoreController.swift; sourceTree = "<group>"; };
 		27E59BEC1DB7AFEF007CBF00 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4E2BC6FB1DB7CC730093C59F /* Bar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
+		4E2BC6FD1DB7CC8D0093C59F /* BarStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarStore.swift; sourceTree = "<group>"; };
 		4E86367F1DB79C090019691C /* BarFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8636821DB79C090019691C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E8636871DB79C090019691C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 			children = (
 				4E8636821DB79C090019691C /* AppDelegate.swift */,
 				27E59BDF1DB7AB3A007CBF00 /* TableViewController.swift */,
+				4E2BC6FB1DB7CC730093C59F /* Bar.swift */,
+				4E2BC6FD1DB7CC8D0093C59F /* BarStore.swift */,
 				27E59BE11DB7ABB9007CBF00 /* MapViewController.swift */,
 				27E59BE31DB7AC91007CBF00 /* AddBarController.swift */,
 				27E59BE51DB7ACDB007CBF00 /* DetailViewController.swift */,
@@ -161,7 +167,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				27E59BE01DB7AB3A007CBF00 /* TableViewController.swift in Sources */,
+				4E2BC6FC1DB7CC730093C59F /* Bar.swift in Sources */,
 				27E59BE21DB7ABB9007CBF00 /* MapViewController.swift in Sources */,
+				4E2BC6FE1DB7CC8D0093C59F /* BarStore.swift in Sources */,
 				27E59BE61DB7ACDB007CBF00 /* DetailViewController.swift in Sources */,
 				4E8636831DB79C090019691C /* AppDelegate.swift in Sources */,
 				27E59BE41DB7AC91007CBF00 /* AddBarController.swift in Sources */,
