@@ -32,6 +32,16 @@ class TableViewController: UITableViewController  {
         return 10
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddBar" {
+            
+        }
+        
+        if segue.identifier == "BarDetails" {
+            
+        }
+        
+    }
     
     
 }

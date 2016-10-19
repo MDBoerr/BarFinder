@@ -10,4 +10,9 @@ import UIKit
 
 class Bar: NSObject {
     
+    var barName : String = " "
+    var barAddress : String = " "
+    var barZipCode : String = " "
+    var barTimeSchedule : String = " "
+    
 }

@@ -38,8 +38,8 @@
                     <tabBarItem key="tabBarItem" title="List" id="ccu-SV-gQQ"/>
                     <navigationItem key="navigationItem" title="BarFinder" id="EuU-Mm-v9s"/>
                     <connections>
-                        <segue destination="tOC-7b-2xR" kind="show" id="udZ-4Y-zku"/>
-                        <segue destination="9cU-MB-s2e" kind="show" id="jDS-uS-FFl"/>
+                        <segue destination="tOC-7b-2xR" kind="show" identifier="BarDetails" id="udZ-4Y-zku"/>
+                        <segue destination="9cU-MB-s2e" kind="show" identifier="AddBar" id="jDS-uS-FFl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kac-se-l5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
