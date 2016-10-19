@@ -9,6 +9,6 @@
 import UIKit
 import MapKit
 
-class MapViewController: MKMapView {
+class MapViewController: UIViewController {
     
 }

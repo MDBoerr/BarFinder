@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--TableViewController-->
         <scene sceneID="DGc-XQ-c54">
             <objects>
-                <tableViewController id="i0H-SD-md9" customClass="TableViewController" customModule="BarFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="TableViewController" id="i0H-SD-md9" customClass="TableViewController" customModule="BarFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Weh-YN-H01">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,6 +21,12 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8dd-XN-nNu" id="fsH-Zb-rkS">
                                     <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g7k-rJ-nee">
+                                            <frame key="frameInset" minY="-28" width="72" height="72"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -29,8 +35,12 @@
                             <outlet property="delegate" destination="i0H-SD-md9" id="T6G-j2-xt3"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" id="ccu-SV-gQQ"/>
-                    <navigationItem key="navigationItem" id="EuU-Mm-v9s"/>
+                    <tabBarItem key="tabBarItem" title="List" id="ccu-SV-gQQ"/>
+                    <navigationItem key="navigationItem" title="BarFinder" id="EuU-Mm-v9s"/>
+                    <connections>
+                        <segue destination="tOC-7b-2xR" kind="show" id="udZ-4Y-zku"/>
+                        <segue destination="9cU-MB-s2e" kind="show" id="jDS-uS-FFl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kac-se-l5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,12 +60,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rAV-oB-fEu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="751" y="794"/>
+            <point key="canvasLocation" x="750" y="624"/>
         </scene>
         <!--Map-->
         <scene sceneID="Rcy-AO-kRh">
             <objects>
-                <viewController id="bVA-ZK-x7F" sceneMemberID="viewController">
+                <viewController id="bVA-ZK-x7F" customClass="MapViewController" customModule="BarFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BKr-nd-Fam"/>
                         <viewControllerLayoutGuide type="bottom" id="anT-4o-15s"/>
@@ -71,11 +81,101 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="sCp-aM-Ih7"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="sCp-aM-Ih7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXH-CL-Ena" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2444" y="135.38230884557723"/>
+        </scene>
+        <!--AddBarController-->
+        <scene sceneID="Fn0-CW-Zgx">
+            <objects>
+                <viewController title="AddBarController" id="9cU-MB-s2e" customClass="AddBarController" customModule="BarFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6sk-X8-Y4p"/>
+                        <viewControllerLayoutGuide type="bottom" id="DjG-JN-VSu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OV3-Sl-D4A">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HFm-on-2Ha">
+                                <frame key="frameInset" minX="117" minY="72" width="140" height="141"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QJH-ub-ud1">
+                                <frame key="frameInset" minX="139" minY="266" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pjl-lT-evd">
+                                <frame key="frameInset" minX="139" minY="337" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HCH-S6-zUk">
+                                <frame key="frameInset" minX="139" minY="401" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3LK-NJ-dOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1660" y="-642.72863568215894"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="hRn-9q-bme">
+            <objects>
+                <viewController id="tOC-7b-2xR" customClass="DetailViewController" customModule="BarFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eCJ-nv-fm4"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ioe-5J-LCr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iuL-EC-QJf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="barTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1le-Nm-z7k">
+                                <frame key="frameInset" minX="144" minY="28" width="86" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXd-Et-pwS" userLabel="AddressLabel">
+                                <frame key="frameInset" minX="44" minY="326" width="286" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sg9-sZ-wzo">
+                                <frame key="frameInset" minX="97" minY="97" width="181" height="181"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TimeScheduleLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Niv-1q-8PI" userLabel="TimeScheduleLabel">
+                                <frame key="frameInset" minX="108" minY="368" width="158" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yZ0-36-USo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2444" y="-662.51874062968523"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="b77-Jr-pDl">
@@ -94,9 +194,12 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6r-uW-R6a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="744.79999999999995" y="135.38230884557723"/>
+            <point key="canvasLocation" x="750" y="-54"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MapIcon" width="48" height="32"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="IMX-XF-FFk"/>
     </inferredMetricsTieBreakers>
