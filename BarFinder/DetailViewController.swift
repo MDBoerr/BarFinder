@@ -11,5 +11,16 @@ import UIKit
 class DetailViewController: UIViewController {
     
     var currentBar : Dictionary<String, String> = [:]
+   
+    @IBOutlet var addressLabel: UILabel!
+    
+    var bar : Bar!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        addressLabel.text = bar.address
+        
+    }
     
 }

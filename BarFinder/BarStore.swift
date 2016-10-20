@@ -10,6 +10,6 @@ import UIKit
 
 class BarStore {
     
-    var allBars = [Bar]()
+    var allBars : [Bar] = []
     
 }

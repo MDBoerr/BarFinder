@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Bar {
+class Bar : NSObject{
     
     var name : String = " "
     var address : String = " "
