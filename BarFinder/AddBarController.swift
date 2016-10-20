@@ -12,7 +12,16 @@ class AddBarController: UIViewController {
     
     
     @IBOutlet var nameTextField: UITextField!
-    
     @IBOutlet var addressTextField: UITextField!
+    
+    var bar: Bar!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        nameTextField.text = bar.name
+    }
+    
+    
     
 }
