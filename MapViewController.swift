@@ -44,7 +44,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         trailingConstraint.isActive = true
         
         let locationButton = UIButton()
-        locationButton.setImage(UIImage(named: "icon.png"), for: .normal)
+        locationButton.setImage(UIImage(named: "locIcon.png"), for: .normal)
         locationButton.alpha = 1
         locationButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(locationButton)
@@ -77,7 +77,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
-        
+    
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         mapView.showsUserLocation = true
