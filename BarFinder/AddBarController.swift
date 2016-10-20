@@ -20,6 +20,7 @@ class AddBarController: UIViewController {
         super.viewWillAppear(animated)
         
         nameTextField.text = bar.name
+        addressTextField.text = bar.address
     }
     
     

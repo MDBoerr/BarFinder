@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271A54D21DB90D30003B9AA2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 271A54D11DB90D30003B9AA2 /* GoogleService-Info.plist */; };
 		275C3AE61DB8F08E00B0355A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 275C3AE51DB8F08E00B0355A /* Assets.xcassets */; };
 		27E59BE01DB7AB3A007CBF00 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E59BDF1DB7AB3A007CBF00 /* TableViewController.swift */; };
 		27E59BE21DB7ABB9007CBF00 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E59BE11DB7ABB9007CBF00 /* MapViewController.swift */; };
@@ -19,11 +20,11 @@
 		4E8636831DB79C090019691C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8636821DB79C090019691C /* AppDelegate.swift */; };
 		4E8636881DB79C090019691C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E8636861DB79C090019691C /* Main.storyboard */; };
 		4E86368D1DB79C090019691C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E86368B1DB79C090019691C /* LaunchScreen.storyboard */; };
-		93D0239999B6A80C9413C3D0 /* Pods_BarFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D20390A7241CD51032D975 /* Pods_BarFinder.framework */; };
+		B18A84E8B23AB196D096D68C /* Pods_BarFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C532538F8FB8C3609369828E /* Pods_BarFinder.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0F1CB842869E698E1AF512CC /* Pods-BarFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BarFinder/Pods-BarFinder.debug.xcconfig"; sourceTree = "<group>"; };
+		271A54D11DB90D30003B9AA2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		275C3AE51DB8F08E00B0355A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27E59BDF1DB7AB3A007CBF00 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		27E59BE11DB7ABB9007CBF00 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../MapViewController.swift; sourceTree = "<group>"; };
@@ -38,8 +39,9 @@
 		4E8636871DB79C090019691C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E86368C1DB79C090019691C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E86368E1DB79C090019691C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6D20390A7241CD51032D975 /* Pods_BarFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BarFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF57CBF16D3D6AA602B6365A /* Pods-BarFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-BarFinder/Pods-BarFinder.release.xcconfig"; sourceTree = "<group>"; };
+		A3126E3AAFEE494DD5DC9B95 /* Pods-BarFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BarFinder/Pods-BarFinder.debug.xcconfig"; sourceTree = "<group>"; };
+		C532538F8FB8C3609369828E /* Pods_BarFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BarFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9940B2960606E6360A2A367 /* Pods-BarFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-BarFinder/Pods-BarFinder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27E59BED1DB7AFEF007CBF00 /* MapKit.framework in Frameworks */,
-				93D0239999B6A80C9413C3D0 /* Pods_BarFinder.framework in Frameworks */,
+				B18A84E8B23AB196D096D68C /* Pods_BarFinder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				27E59BEC1DB7AFEF007CBF00 /* MapKit.framework */,
-				A6D20390A7241CD51032D975 /* Pods_BarFinder.framework */,
+				C532538F8FB8C3609369828E /* Pods_BarFinder.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -70,7 +72,7 @@
 				4E8636811DB79C090019691C /* BarFinder */,
 				4E8636801DB79C090019691C /* Products */,
 				27E59BEB1DB7AFEF007CBF00 /* Frameworks */,
-				521F7F9060A89CCBFF95DA6F /* Pods */,
+				E0FB95B5015B1C9B4E09640D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,15 +99,16 @@
 				4E86368B1DB79C090019691C /* LaunchScreen.storyboard */,
 				275C3AE51DB8F08E00B0355A /* Assets.xcassets */,
 				4E86368E1DB79C090019691C /* Info.plist */,
+				271A54D11DB90D30003B9AA2 /* GoogleService-Info.plist */,
 			);
 			path = BarFinder;
 			sourceTree = "<group>";
 		};
-		521F7F9060A89CCBFF95DA6F /* Pods */ = {
+		E0FB95B5015B1C9B4E09640D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0F1CB842869E698E1AF512CC /* Pods-BarFinder.debug.xcconfig */,
-				FF57CBF16D3D6AA602B6365A /* Pods-BarFinder.release.xcconfig */,
+				A3126E3AAFEE494DD5DC9B95 /* Pods-BarFinder.debug.xcconfig */,
+				D9940B2960606E6360A2A367 /* Pods-BarFinder.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -117,12 +120,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E8636911DB79C090019691C /* Build configuration list for PBXNativeTarget "BarFinder" */;
 			buildPhases = (
-				DA656CA4D3AEBEC0ACC245E4 /* [CP] Check Pods Manifest.lock */,
+				0CC0D982FD1CA01E24959362 /* [CP] Check Pods Manifest.lock */,
 				4E86367B1DB79C080019691C /* Sources */,
 				4E86367C1DB79C080019691C /* Frameworks */,
 				4E86367D1DB79C080019691C /* Resources */,
-				B61C8F61C349ABA93CD8F11A /* [CP] Embed Pods Frameworks */,
-				4B638619ED161CBFF10ECF51 /* [CP] Copy Pods Resources */,
+				ED397813A0AC67209EF87710 /* [CP] Embed Pods Frameworks */,
+				EF70DC322DA4E3EB235C6FB6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E86368D1DB79C090019691C /* LaunchScreen.storyboard in Resources */,
+				271A54D21DB90D30003B9AA2 /* GoogleService-Info.plist in Resources */,
 				275C3AE61DB8F08E00B0355A /* Assets.xcassets in Resources */,
 				4E8636881DB79C090019691C /* Main.storyboard in Resources */,
 			);
@@ -182,22 +186,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4B638619ED161CBFF10ECF51 /* [CP] Copy Pods Resources */ = {
+		0CC0D982FD1CA01E24959362 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BarFinder/Pods-BarFinder-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		B61C8F61C349ABA93CD8F11A /* [CP] Embed Pods Frameworks */ = {
+		ED397813A0AC67209EF87710 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -212,19 +216,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BarFinder/Pods-BarFinder-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DA656CA4D3AEBEC0ACC245E4 /* [CP] Check Pods Manifest.lock */ = {
+		EF70DC322DA4E3EB235C6FB6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BarFinder/Pods-BarFinder-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -360,7 +364,7 @@
 		};
 		4E8636921DB79C090019691C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F1CB842869E698E1AF512CC /* Pods-BarFinder.debug.xcconfig */;
+			baseConfigurationReference = A3126E3AAFEE494DD5DC9B95 /* Pods-BarFinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HZWL927386;
@@ -375,7 +379,7 @@
 		};
 		4E8636931DB79C090019691C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF57CBF16D3D6AA602B6365A /* Pods-BarFinder.release.xcconfig */;
+			baseConfigurationReference = D9940B2960606E6360A2A367 /* Pods-BarFinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HZWL927386;
