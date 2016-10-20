@@ -10,8 +10,15 @@ import UIKit
 
 class TableViewController: UITableViewController  {
     
+    var barInfo : [Dictionary<String, String>] = []
+    let dataSource = Bar()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dataSource.createDicts()
+        barInfo = dataSource.giveBarArray()
+        
         
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         
@@ -23,12 +30,19 @@ class TableViewController: UITableViewController  {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 10
+        return barInfo.count
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        //let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
+        
+        //var indexPath = indexPath
+        let currentBar = barInfo[indexPath.row]
+        print("These are the bars: \(currentBar)")
+        //                let name = currentBar["Name"]
+        //                print("These are the bar names: \(name)")
         
         cell.textLabel?.text = "test"
         cell.detailTextLabel?.text = "address"
@@ -37,13 +51,18 @@ class TableViewController: UITableViewController  {
         return cell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        if segue.identifier == "BarDetails" {
-            
-        }
-        
-    }
-    
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //
+    //                if segue.identifier == "BarDetails" {
+    //
+    //                    var indexPath = tableView.indexPathForSelectedRow
+    //                    let item = barInfo[(indexPath?.row)!]
+    //
+    //                    let detailViewController = segue.destination as! DetailViewController
+    //                    detailViewController.currentBar = item
+    //
+    //                }
+    //        
+    //    }
     
 }

@@ -10,4 +10,6 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    var currentBar : Dictionary<String, String> = [:]
+    
 }
