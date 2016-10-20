@@ -49,18 +49,18 @@ class TableViewController: UITableViewController  {
         return cell
     }
     
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //
-    //                if segue.identifier == "BarDetails" {
-    //
-    //                    var indexPath = tableView.indexPathForSelectedRow
-    //                    let item = barInfo[(indexPath?.row)!]
-    //
-    //                    let detailViewController = segue.destination as! DetailViewController
-    //                    detailViewController.currentBar = item
-    //
-    //                }
-    //        
-    //    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "BarDetails" {
+            
+            var indexPath = tableView.indexPathForSelectedRow
+            let item = barInfo[(indexPath?.row)!]
+            
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.currentBar = item
+            
+        }
+        
+    }
     
 }
