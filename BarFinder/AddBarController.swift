@@ -10,4 +10,9 @@ import UIKit
 
 class AddBarController: UIViewController {
     
+    
+    @IBOutlet var nameTextField: UITextField!
+    
+    @IBOutlet var addressTextField: UITextField!
+    
 }
