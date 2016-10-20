@@ -44,7 +44,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         trailingConstraint.isActive = true
         
         let locationButton = UIButton()
-        locationButton.setImage(UIImage(named: "locIcon.png"), for: .normal)
+        locationButton.setImage(UIImage(named: "locIcon"), for: .normal)
         locationButton.alpha = 1
         locationButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(locationButton)
