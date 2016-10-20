@@ -14,16 +14,6 @@
 
 /* Begin PBXFileReference section */
 		0E0A0E0E8C8F782BC73B20D86496A1E7 /* Pods-BarFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BarFinder.release.xcconfig"; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		2B07FEB38934A47D10C249E39266C6C5 /* Pods-BarFinder-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BarFinder-acknowledgements.plist"; sourceTree = "<group>"; };
-		56BADA19F0FB47804F25D93495A37658 /* Pods_BarFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BarFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6FCF5190B2336FDD4B016DAD42E7D127 /* Pods-BarFinder-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BarFinder-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7B695FC8C18F1C14150D785BF9988B73 /* Pods-BarFinder.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BarFinder.modulemap"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9E865AC538BC07132DF5810D71C3A2E2 /* Pods-BarFinder-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BarFinder-resources.sh"; sourceTree = "<group>"; };
-		B4856AE5C6ED098DEA60426EF2F1E45A /* Pods-BarFinder-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BarFinder-umbrella.h"; sourceTree = "<group>"; };
-		B7C2CC601D807A97A0FE72E9C35E18EC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-=======
 		178D8FDE0929AB101863CECBB5EF70A0 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
 		1FCB3A499DF94478620BA9B527F342FC /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
 		2B07FEB38934A47D10C249E39266C6C5 /* Pods-BarFinder-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BarFinder-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -40,15 +30,11 @@
 		B4856AE5C6ED098DEA60426EF2F1E45A /* Pods-BarFinder-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BarFinder-umbrella.h"; sourceTree = "<group>"; };
 		B7C2CC601D807A97A0FE72E9C35E18EC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA9DD2105C15856CCF750CDD57CFF890 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
->>>>>>> 96c3ad3bc4675943961025be2eb23531d8ed62a4
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D1674EED783A8AEFF1EE67D97B2EDEFA /* Pods-BarFinder-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BarFinder-dummy.m"; sourceTree = "<group>"; };
 		D51117DAF8FFCF60583FC7E7E1164265 /* Pods-BarFinder-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BarFinder-frameworks.sh"; sourceTree = "<group>"; };
 		E85BBD2A115DA653657FAF81FD608073 /* Pods-BarFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BarFinder.debug.xcconfig"; sourceTree = "<group>"; };
-<<<<<<< HEAD
-=======
 		E9AC004E2CFEAE37F2BE33D001FBFA95 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
->>>>>>> 96c3ad3bc4675943961025be2eb23531d8ed62a4
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +49,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-<<<<<<< HEAD
-=======
 		07A4F2A2C2461BC26EE06966C0D3F14A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,7 +104,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
->>>>>>> 96c3ad3bc4675943961025be2eb23531d8ed62a4
 		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,17 +117,12 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-<<<<<<< HEAD
-=======
 				48FD774D2F83585DABBA5DD5F8C85CC9 /* Pods */,
->>>>>>> 96c3ad3bc4675943961025be2eb23531d8ed62a4
 				BADD52AF2B295B5BE7E82F551E028F8E /* Products */,
 				BE1308DB4295C520EA7DFE4C2867B38B /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-=======
 		92C8D4F899496CC1CA829ACA83A08072 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,7 +147,6 @@
 			path = GoogleSymbolUtilities;
 			sourceTree = "<group>";
 		};
->>>>>>> 96c3ad3bc4675943961025be2eb23531d8ed62a4
 		BADD52AF2B295B5BE7E82F551E028F8E /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,8 +171,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-=======
 		C36470E2B25450A3431AADE159BDB7AF /* GoogleUtilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,7 +227,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
->>>>>>> 96c3ad3bc4675943961025be2eb23531d8ed62a4
 		E2BD97386814DA49608C0B371AE58036 /* Pods-BarFinder */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,8 +245,6 @@
 			path = "Target Support Files/Pods-BarFinder";
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-=======
 		F72444E6FB034C662874AAE6855C2DE7 /* FirebaseInstanceID */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,7 +254,6 @@
 			path = FirebaseInstanceID;
 			sourceTree = "<group>";
 		};
->>>>>>> 96c3ad3bc4675943961025be2eb23531d8ed62a4
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
