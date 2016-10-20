@@ -9,9 +9,13 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+
+class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     var mapView : MKMapView!
+    var locationManager = CLLocationManager()
+    var longlat: CLLocationCoordinate2D!
+    var region: MKCoordinateRegion!
     
     override func loadView() {
         mapView = MKMapView()
@@ -39,10 +43,44 @@ class MapViewController: UIViewController {
         leadingConstraint.isActive = true
         trailingConstraint.isActive = true
         
+        let locationButton = UIButton()
+        locationButton.setImage(UIImage(named: "icon.png"), for: .normal)
+        locationButton.alpha = 1
+        locationButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(locationButton)
+        
+        //Button Constraints right
+        let bottomConstaintButton = locationButton.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -8)
+        
+        let trailingConstraintButton = locationButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
+        
+        bottomConstaintButton.isActive = true
+        trailingConstraintButton.isActive = true
+        
+        locationButton.addTarget(self,  action:#selector(whatIsMyLocation), for: .touchDown)
+        
     }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.longlat = manager.location!.coordinate
+
+        self.region = MKCoordinateRegion(center: self.longlat, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+    }
+
+    func whatIsMyLocation() {
+        if longlat != nil {
+            mapView.setCenter(longlat, animated: true)
+            mapView.setRegion(region, animated: true)
+        }
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+        
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        mapView.showsUserLocation = true
         
     }
     
