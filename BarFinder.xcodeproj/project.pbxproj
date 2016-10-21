@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2716E8021DBA01A10085AD55 /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716E8011DBA01A10085AD55 /* BarCell.swift */; };
 		271A54D21DB90D30003B9AA2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 271A54D11DB90D30003B9AA2 /* GoogleService-Info.plist */; };
 		275C3AE61DB8F08E00B0355A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 275C3AE51DB8F08E00B0355A /* Assets.xcassets */; };
 		27E59BE01DB7AB3A007CBF00 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E59BDF1DB7AB3A007CBF00 /* TableViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2716E8011DBA01A10085AD55 /* BarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarCell.swift; sourceTree = "<group>"; };
 		271A54D11DB90D30003B9AA2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		275C3AE51DB8F08E00B0355A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27E59BDF1DB7AB3A007CBF00 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				27E59BE11DB7ABB9007CBF00 /* MapViewController.swift */,
 				27E59BE31DB7AC91007CBF00 /* AddBarController.swift */,
 				27E59BE51DB7ACDB007CBF00 /* DetailViewController.swift */,
+				2716E8011DBA01A10085AD55 /* BarCell.swift */,
 				27E59BE91DB7ACF9007CBF00 /* ImageStoreController.swift */,
 				4E8636861DB79C090019691C /* Main.storyboard */,
 				4E86368B1DB79C090019691C /* LaunchScreen.storyboard */,
@@ -242,6 +245,7 @@
 				4E2BC6FC1DB7CC730093C59F /* Bar.swift in Sources */,
 				27E59BE21DB7ABB9007CBF00 /* MapViewController.swift in Sources */,
 				4E2BC6FE1DB7CC8D0093C59F /* BarStore.swift in Sources */,
+				2716E8021DBA01A10085AD55 /* BarCell.swift in Sources */,
 				27E59BE61DB7ACDB007CBF00 /* DetailViewController.swift in Sources */,
 				4E8636831DB79C090019691C /* AppDelegate.swift in Sources */,
 				27E59BE41DB7AC91007CBF00 /* AddBarController.swift in Sources */,

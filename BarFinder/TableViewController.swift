@@ -13,6 +13,11 @@ class TableViewController: UITableViewController  {
     var barInfo : [Dictionary<String, String>] = []
     let dataSource = Bar()
     
+    
+    @IBAction func addNewBar(sender: AnyObject) {
+        
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
