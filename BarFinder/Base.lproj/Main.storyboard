@@ -151,6 +151,10 @@
                             <constraint firstItem="DjG-JN-VSu" firstAttribute="top" secondItem="Xr0-NK-cA2" secondAttribute="bottom" id="mlt-W4-9Cp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addressField" destination="PlM-7J-8Ox" id="3gt-Vc-sAG"/>
+                        <outlet property="nameField" destination="OJX-Oe-Cbw" id="RgJ-fK-vu0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3LK-NJ-dOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

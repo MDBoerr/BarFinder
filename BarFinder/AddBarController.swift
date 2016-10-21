@@ -11,18 +11,23 @@ import UIKit
 class AddBarController: UIViewController {
     
     
-    @IBOutlet var nameTextField: UITextField!
-    @IBOutlet var addressTextField: UITextField!
-    
+    @IBOutlet var nameField: UITextField!
+    @IBOutlet var addressField: UITextField!
+
     var bar: Bar!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
  // add view wont load when used ->       
-//        nameTextField.text = bar.name
+//        nameField.text = bar.name
 //        
-//        addressTextField.text = bar.address
+//        addressField.text = bar.address
     }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        //save changes to item 
+//        bar.name = bar.text ?? ""
+//        
+//    }
     
     
     

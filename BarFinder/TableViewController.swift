@@ -40,22 +40,23 @@ class TableViewController: UITableViewController  {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-       // return barStore.allBars.count
-        return barInfo.count
+        return barStore.allBars.count
+        //return barInfo.count
         
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BarCell", for: indexPath) as! BarCell
         //let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
-//        let item = barStore.allBars[indexPath.row]
-        
-        let currentBar = barInfo[indexPath.row]
-        let name = currentBar["Name"]
-        let address = currentBar["Address"]
-        
-        cell.nameLabel.text = name
-        cell.addressLabel.text = address
+        let item = barStore.allBars[indexPath.row]
+//
+//        let currentBar = barInfo[indexPath.row]
+//        
+//        let name = currentBar["Name"]
+//        let address = currentBar["Address"]
+//        
+        cell.nameLabel.text = item.name
+        cell.addressLabel.text = item.address
         cell.imageView?.image = UIImage(named: "MapIcon.png")
         
         return cell
@@ -67,6 +68,7 @@ class TableViewController: UITableViewController  {
             
             var indexPath = tableView.indexPathForSelectedRow
             let item = barInfo[(indexPath?.row)!]
+            //let item = barStore.allBars[(indexPath?.row)!]
             
             let detailViewController = segue.destination as! DetailViewController
             detailViewController.currentBar = item
