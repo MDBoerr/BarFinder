@@ -18,8 +18,8 @@ class DetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        addressLabel.text = bar.address
+        // DEtail view wont load when used ->
+       // addressLabel.text = bar.address
         
     }
     

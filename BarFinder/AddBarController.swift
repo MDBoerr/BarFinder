@@ -18,9 +18,10 @@ class AddBarController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        nameTextField.text = bar.name
-        addressTextField.text = bar.address
+ // add view wont load when used ->       
+//        nameTextField.text = bar.name
+//        
+//        addressTextField.text = bar.address
     }
     
     
