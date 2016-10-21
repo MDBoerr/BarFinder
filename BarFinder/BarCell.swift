@@ -6,4 +6,11 @@
 //  Copyright © 2016 EPW. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class BarCell: UITableViewCell {
+
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var addressLabel: UILabel!
+    
+}
