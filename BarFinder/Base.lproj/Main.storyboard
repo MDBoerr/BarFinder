@@ -151,6 +151,8 @@
                             <constraint firstItem="DjG-JN-VSu" firstAttribute="top" secondItem="Xr0-NK-cA2" secondAttribute="bottom" id="mlt-W4-9Cp"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addressField" destination="PlM-7J-8Ox" id="3gt-Vc-sAG"/>
                         <outlet property="nameField" destination="OJX-Oe-Cbw" id="RgJ-fK-vu0"/>
@@ -193,6 +195,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addressLabel" destination="WXd-Et-pwS" id="PZT-8C-ZkR"/>
                     </connections>

@@ -14,15 +14,23 @@ class AddBarController: UIViewController {
     @IBOutlet var addressField: UITextField!
 
     var bar: Bar!
+    var barStore : BarStore!
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         // 'Save' changes to item
-        bar.name = nameField.text ?? ""
+//        bar.name = nameField.text ?? ""
+//        bar.address = addressField.text!
+        
         
     }
     
     
+    //IBAction {
+    // var myname = textfield.text
+    // let newBar = Bar(name: myname)
+//}
+
     
 }
