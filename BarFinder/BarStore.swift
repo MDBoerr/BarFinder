@@ -35,14 +35,12 @@ class BarStore {
     
 
     
-//    func createBar() -> Bar {
-//        let newBar = Bar(name: name, address: address)
-//        
-//        allBars.append(newBar)
-//        
-//        return newBar
-//    }
-
+    func createNewBar(name: String, address: String) -> Bar {
+        let newBar = Bar(name: name, address: address)
         
+        allBars.append(newBar)
+        
+        return newBar
+    }
     
 }

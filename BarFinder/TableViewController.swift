@@ -18,15 +18,15 @@ class TableViewController: UITableViewController  {
     
     @IBAction func addNewBar(sender: AnyObject) {
 //        // Create a new Item and add it to the store
-//        let newItem = BarStore.createBar()
-//        
-//        // Figure out where that item is in the array
-//        if let index = BarStore.allItems.index(of: newItem) {
-//            let indexPath = IndexPath(row: index, section: 0)
-//            
-//            // Insert this new row into the table.
-//            tableView.insertRows(at: [indexPath], with: .automatic)
+        let newBar = Bar(name: "", address: "")
 
+//        // Figure out where that item is in the array
+        if let index = barStore.allBars.index(of: newBar) {
+            let indexPath = IndexPath(row: index, section: 0)
+//
+//            // Insert this new row into the table.
+            tableView.insertRows(at: [indexPath], with: .automatic)
+        }
     }
 
     override func viewDidLoad() {
@@ -34,7 +34,6 @@ class TableViewController: UITableViewController  {
         barStore.createBar()
         
         var barInfo = barStore?.allBars
-        print("This is in allBars \(barStore!.allBars.count)")
         
         
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
@@ -90,4 +89,5 @@ class TableViewController: UITableViewController  {
         
         tableView.reloadData()
     }
+
 }
