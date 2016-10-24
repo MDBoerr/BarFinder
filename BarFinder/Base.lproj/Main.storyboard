@@ -94,6 +94,7 @@
         <!--AddBarController-->
         <scene sceneID="Fn0-CW-Zgx">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3LK-NJ-dOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="AddBarController" id="9cU-MB-s2e" customClass="AddBarController" customModule="BarFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6sk-X8-Y4p"/>
@@ -156,9 +157,8 @@
                         <outlet property="nameField" destination="OJX-Oe-Cbw" id="RgJ-fK-vu0"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3LK-NJ-dOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2180" y="462"/>
+            <point key="canvasLocation" x="2180" y="461.91904047976016"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="hRn-9q-bme">

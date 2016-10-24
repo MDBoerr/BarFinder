@@ -9,13 +9,16 @@
 import UIKit
 import Firebase
 
-class TableViewController: UITableViewController  {
+class TableViewController: UITableViewController {
     
     var barInfo : [Dictionary<String, String>] = []
     let dataSource = Bar()
     let barStore: BarStore! = BarStore()
     
-
+//    let rootRef = FIRDatabase.database().reference(withPath: "Bars")
+//    let barCell : BarCell! = BarCell()
+//    let barCellNameLabel = BarCell().nameLabel
+//    let barCellAddress  = BarCell().addressLabel
     
     @IBAction func addNewBar(sender: AnyObject) {
         
@@ -40,23 +43,23 @@ class TableViewController: UITableViewController  {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return barStore.allBars.count
-        //return barInfo.count
+        //return barStore.allBars.count
+        return barInfo.count
         
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BarCell", for: indexPath) as! BarCell
         //let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
-        let item = barStore.allBars[indexPath.row]
+      //  let item = barStore.allBars[indexPath.row]
 //
-//        let currentBar = barInfo[indexPath.row]
+        let currentBar = barInfo[indexPath.row]
 //        
-//        let name = currentBar["Name"]
-//        let address = currentBar["Address"]
+        let name = currentBar["Name"]
+        let address = currentBar["Address"]
 //        
-        cell.nameLabel.text = item.name
-        cell.addressLabel.text = item.address
+        cell.nameLabel.text = name
+        cell.addressLabel.text = address
         cell.imageView?.image = UIImage(named: "MapIcon.png")
         
         return cell
@@ -74,7 +77,16 @@ class TableViewController: UITableViewController  {
             detailViewController.currentBar = item
             
         }
-        
     }
+//        func viewDidAppear(animated: Bool) {
+//            super.viewDidAppear(animated)
+//            let rootRef = FIRDatabase.database().reference(withPath: "Bars")
+//            let conditionRef = rootRef.child("BarInfo")
+//            conditionRef.observe(.value) { (snap: FIRDataSnapshot) in
+//                self.barCellNameLabel?.text = (snap.value as! String).description
     
+                
+                
+        
+        
 }
