@@ -12,43 +12,29 @@ import Firebase
 
 class DetailViewController: UIViewController {
     
-    var currentBar : Dictionary<String, String> = [:]
     let barStore : BarStore! = BarStore()
-    let dataSource = Bar()
-    let barCell : BarCell! = BarCell()
     let barCellNameLabel = BarCell().nameLabel
     let barCellAddress  = BarCell().addressLabel
    
     @IBOutlet var addressLabel: UILabel!
     
-    var bar : BarCell! {
+    var bar : Bar! {
         //Setting the title in the navigationbar (doesn't give the value yet)
         didSet {
-            navigationItem.title = currentBar["Name"]
+            navigationItem.title = bar.name
         }
     }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
        
         //AddressLabel is linked properly now but doesn't show the right value yet..
         
-        addressLabel.text = currentBar["Address"]
+        addressLabel.text = bar?.address
         
     }
-//    override func viewDidLoad() {
-//        let rootRef = FIRDatabase.database().reference()
-//        let barInfo = dataSource.giveBarArray()
-//        
-//        rootRef.child("Bars").observe(.childAdded, with: { snapshot in
-//            let name = snapshot.value!["Name"]
-//        
-//        
-//        })
-//        dataSource.createDicts()
-//    }
-//    func post() {
-//        
-//    }
-    
-    
+
+     
+        
+
 }

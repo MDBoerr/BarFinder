@@ -45,7 +45,7 @@
                                 <connections>
                                     <outlet property="addressLabel" destination="TCT-MR-cj2" id="JKR-OL-8e4"/>
                                     <outlet property="nameLabel" destination="bHO-wS-PrU" id="15Y-hK-LAb"/>
-                                    <segue destination="tOC-7b-2xR" kind="show" id="xao-4Z-UVX"/>
+                                    <segue destination="tOC-7b-2xR" kind="show" identifier="BarDetails" id="xao-4Z-UVX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -94,7 +94,6 @@
         <!--AddBarController-->
         <scene sceneID="Fn0-CW-Zgx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3LK-NJ-dOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="AddBarController" id="9cU-MB-s2e" customClass="AddBarController" customModule="BarFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6sk-X8-Y4p"/>
@@ -157,6 +156,7 @@
                         <outlet property="nameField" destination="OJX-Oe-Cbw" id="RgJ-fK-vu0"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3LK-NJ-dOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2180" y="461.91904047976016"/>
         </scene>

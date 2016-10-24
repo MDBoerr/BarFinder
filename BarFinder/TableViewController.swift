@@ -11,9 +11,8 @@ import Firebase
 
 class TableViewController: UITableViewController  {
     
-    var barInfo : [Dictionary<String, String>] = []
-    let dataSource = Bar()
     let barStore: BarStore! = BarStore()
+    var bar : Bar?
     
 
     
@@ -32,10 +31,10 @@ class TableViewController: UITableViewController  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        barStore.createBar()
         
-        dataSource.createDicts()
-        barInfo = dataSource.giveBarArray()
-        
+        var barInfo = barStore?.allBars
+        print("This is in allBars \(barStore!.allBars.count)")
         
         
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
@@ -44,13 +43,13 @@ class TableViewController: UITableViewController  {
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
         tableView.rowHeight = 80
+
         
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        //return barStore.allBars.count
-        return barInfo.count
+        return barStore!.allBars.count
         
     }
     
@@ -60,10 +59,10 @@ class TableViewController: UITableViewController  {
         
         //let item = barStore.allBars[indexPath.row]
 
-let currentBar = barInfo[indexPath.row]
+        let currentBar = barStore.allBars[indexPath.row]
         
-        let name = currentBar["Name"]
-        let address = currentBar["Address"]
+        let name = currentBar.name
+        let address = currentBar.address
         
         cell.nameLabel.text = name
         cell.addressLabel.text = address
@@ -75,14 +74,13 @@ let currentBar = barInfo[indexPath.row]
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "BarDetails" {
+            if let row = tableView.indexPathForSelectedRow?.row {
+                //let item = b[(indexPath?.row)!]
+                let item = barStore?.allBars[row]
             
-            var indexPath = tableView.indexPathForSelectedRow
-            let item = barInfo[(indexPath?.row)!]
-            //let item = barStore.allBars[(indexPath?.row)!]
-            
-            let detailViewController = segue.destination as! DetailViewController
-            detailViewController.currentBar = item
-            
+                let detailViewController = segue.destination as! DetailViewController
+                detailViewController.bar = item
+            }
         }
         
     }
