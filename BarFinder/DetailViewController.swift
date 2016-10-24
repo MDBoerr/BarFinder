@@ -14,12 +14,18 @@ class DetailViewController: UIViewController {
    
     @IBOutlet var addressLabel: UILabel!
     
-    var bar : Bar!
-    
+    var bar : BarCell! {
+        //Setting the title in the navigationbar (doesn't give the value yet)
+        didSet {
+            navigationItem.title = currentBar["Name"]
+        }
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // DEtail view wont load when used ->
-       // addressLabel.text = bar.address
+       
+        //AddressLabel is linked properly now but doesn't show the right value yet..
+        
+        addressLabel.text = currentBar["Address"]
         
     }
     
