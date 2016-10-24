@@ -32,6 +32,7 @@ class TableViewController: UITableViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         barStore.createBar()
+       // barStore.uploadTo()
         
         var barInfo = barStore?.allBars
         
