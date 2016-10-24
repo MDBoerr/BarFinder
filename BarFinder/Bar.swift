@@ -8,10 +8,17 @@
 
 import UIKit
 
-class Bar : NSObject{
+class Bar : NSObject {
     
     var name : String = " "
     var address : String = " "
+//    var barNameArray : [String] = []
+//    var barAddressArray : [String] = []
+    
+//    init(name: String, address: String) {
+//        self.name = name
+//        self.address = address
+//    }
     
     var barArray = [Dictionary<String, String>]()
     

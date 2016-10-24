@@ -18,7 +18,16 @@ class TableViewController: UITableViewController  {
 
     
     @IBAction func addNewBar(sender: AnyObject) {
-        
+//        // Create a new Item and add it to the store
+//        let newItem = BarStore.createBar()
+//        
+//        // Figure out where that item is in the array
+//        if let index = BarStore.allItems.index(of: newItem) {
+//            let indexPath = IndexPath(row: index, section: 0)
+//            
+//            // Insert this new row into the table.
+//            tableView.insertRows(at: [indexPath], with: .automatic)
+
     }
 
     override func viewDidLoad() {
@@ -40,23 +49,24 @@ class TableViewController: UITableViewController  {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return barStore.allBars.count
-        //return barInfo.count
+        //return barStore.allBars.count
+        return barInfo.count
         
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BarCell", for: indexPath) as! BarCell
         //let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
-        let item = barStore.allBars[indexPath.row]
-//
-//        let currentBar = barInfo[indexPath.row]
-//        
-//        let name = currentBar["Name"]
-//        let address = currentBar["Address"]
-//        
-        cell.nameLabel.text = item.name
-        cell.addressLabel.text = item.address
+        
+        //let item = barStore.allBars[indexPath.row]
+
+let currentBar = barInfo[indexPath.row]
+        
+        let name = currentBar["Name"]
+        let address = currentBar["Address"]
+        
+        cell.nameLabel.text = name
+        cell.addressLabel.text = address
         cell.imageView?.image = UIImage(named: "MapIcon.png")
         
         return cell
@@ -77,4 +87,9 @@ class TableViewController: UITableViewController  {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
 }
