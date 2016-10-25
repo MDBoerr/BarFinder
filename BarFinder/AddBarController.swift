@@ -32,6 +32,7 @@ class AddBarController: UIViewController {
             print(myName, myAddress)
             let newBar = Bar(name: myName, address: myAddress)
             barStore.allBars.append(newBar)
+            barStore.uploadTo(bar: newBar)
         }
         
     }

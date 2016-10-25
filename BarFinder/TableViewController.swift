@@ -13,14 +13,19 @@ class TableViewController: UITableViewController  {
     
     let barStore: BarStore! = BarStore()
     var bar : Bar?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //let allBars = barStore.giveBarArray()
-       // barStore.uploadTo()
+        // barStore.uploadTo()
         
         //var barInfo = barStore?.allBars
-        
+        barStore.downloadFrom { (result: [Bar]) in
+            if result.count != 0 {
+                self.barStore.allBars = result
+                
+            }
+        }
         
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         
@@ -28,7 +33,7 @@ class TableViewController: UITableViewController  {
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
         tableView.rowHeight = 80
-
+        
         
     }
     
@@ -43,7 +48,7 @@ class TableViewController: UITableViewController  {
         //let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
         
         //let item = barStore.allBars[indexPath.row]
-
+        
         let currentBar = barStore.allBars[indexPath.row]
         
         let name = currentBar.name
@@ -61,7 +66,7 @@ class TableViewController: UITableViewController  {
         if segue.identifier == "BarDetails" {
             if let row = tableView.indexPathForSelectedRow?.row {
                 let item = barStore?.allBars[row]
-            
+                
                 let detailViewController = segue.destination as! DetailViewController
                 detailViewController.bar = item
             }
@@ -74,7 +79,8 @@ class TableViewController: UITableViewController  {
         
         print(barStore.allBars.count)
         
+        
         tableView.reloadData()
     }
-
+    
 }
