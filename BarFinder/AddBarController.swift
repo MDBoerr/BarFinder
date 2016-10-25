@@ -16,18 +16,11 @@ class AddBarController: UIViewController {
     var bar: Bar?
     var barStore : BarStore = BarStore()
     var barArray : [Bar] = []
-    //let addBar = AddBarController()
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        //var barStorage = BarStore()
-        //barArray = barStore.allBars
     }
-    
     @IBAction func createNewBar(_ sender: AnyObject) {
         if (nameField.text != "") && addressField.text != "" {
             let myName : String = (nameField?.text)!

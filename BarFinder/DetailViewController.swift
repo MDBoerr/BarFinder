@@ -15,7 +15,7 @@ class DetailViewController: UIViewController {
     let barStore : BarStore! = BarStore()
     let barCellNameLabel = BarCell().nameLabel
     let barCellAddress  = BarCell().addressLabel
-   
+    
     @IBOutlet var addressLabel: UILabel!
     
     var bar : Bar! {
@@ -24,13 +24,13 @@ class DetailViewController: UIViewController {
             navigationItem.title = bar.name
         }
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       
+        
         //AddressLabel showing the corresponding address
         addressLabel.text = bar?.address
         
     }
-
+    
 }
