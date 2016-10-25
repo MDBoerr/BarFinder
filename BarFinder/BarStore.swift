@@ -12,6 +12,7 @@ import Firebase
 
 class BarStore {
     
+    static let sharedInstance = BarStore()
     var allBars : [Bar] = []
     var detailBar : Bar?
     
@@ -19,11 +20,11 @@ class BarStore {
     
 //    func createBar() {
 //        
-//        let barDict1 = Bar(name: "bar1", address: "adress 1")
-//        let barDict2 = Bar(name: "bar2", address: "adress 2")
-//        let barDict3 = Bar(name: "bar3", address: "adress 3")
-//        let barDict4 = Bar(name: "bar4", address: "adress 4")
-//        let barDict5 = Bar(name: "bar5", address: "adress 5")
+//        let barDict1 = Bar(name: "bar1", address: "address 1")
+//        let barDict2 = Bar(name: "bar2", address: "address 2")
+//        let barDict3 = Bar(name: "bar3", address: "address 3")
+//        let barDict4 = Bar(name: "bar4", address: "address 4")
+//        let barDict5 = Bar(name: "bar5", address: "address 5")
 //        
 //        allBars = [barDict1, barDict2, barDict3, barDict4, barDict5]
 //        

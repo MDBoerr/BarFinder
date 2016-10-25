@@ -13,28 +13,13 @@ class TableViewController: UITableViewController  {
     
     let barStore: BarStore! = BarStore()
     var bar : Bar?
-    
-
-    
-    @IBAction func addNewBar(sender: AnyObject) {
-//        // Create a new Item and add it to the store
-        let newBar = Bar(name: "", address: "")
-
-//        // Figure out where that item is in the array
-        if let index = barStore.allBars.index(of: newBar) {
-            let indexPath = IndexPath(row: index, section: 0)
-//
-//            // Insert this new row into the table.
-            tableView.insertRows(at: [indexPath], with: .automatic)
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //barStore.createBar()
+        //let allBars = barStore.giveBarArray()
        // barStore.uploadTo()
         
-        var barInfo = barStore?.allBars
+        //var barInfo = barStore?.allBars
         
         
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
@@ -75,7 +60,6 @@ class TableViewController: UITableViewController  {
         
         if segue.identifier == "BarDetails" {
             if let row = tableView.indexPathForSelectedRow?.row {
-                //let item = b[(indexPath?.row)!]
                 let item = barStore?.allBars[row]
             
                 let detailViewController = segue.destination as! DetailViewController

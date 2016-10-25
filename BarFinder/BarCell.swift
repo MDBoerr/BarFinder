@@ -9,8 +9,6 @@
 import UIKit
 
 class BarCell: UITableViewCell {
-
-    // var name : String = " "
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var addressLabel: UILabel!
