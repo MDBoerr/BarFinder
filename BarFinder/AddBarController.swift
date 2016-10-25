@@ -13,24 +13,28 @@ class AddBarController: UIViewController {
     @IBOutlet var nameField: UITextField!
     @IBOutlet var addressField: UITextField!
 
-    var bar: Bar!
-    var barStore : BarStore!
+    var bar: Bar?
+    var barStore : BarStore? = BarStore()
+    var barArray : [Bar] = []
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        // 'Save' changes to item
-//        bar.name = nameField.text ?? ""
-//        bar.address = addressField.text!
+        //var barStorage = BarStore()
+        //barArray = barStore!.allBars
+    }
+    
+    @IBAction func createNewBar(_ sender: AnyObject) {
+        if (nameField.text != nil) && addressField.text != nil {
+            let myName : String = (nameField?.text)!
+            let myAddress : String = (addressField?.text)!
+            print(myName, myAddress)
+            let newBar = Bar(name: myName, address: myAddress)
+            barStore?.allBars.append(newBar)
+        }
         
         
     }
-    
-    
-    //IBAction {
-    // var myname = textfield.text
-    // let newBar = Bar(name: myname)
-//}
-
     
 }
