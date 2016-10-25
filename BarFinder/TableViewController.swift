@@ -16,42 +16,29 @@ class TableViewController: UITableViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let allBars = barStore.giveBarArray()
-        // barStore.uploadTo()
-        
-        //var barInfo = barStore?.allBars
         barStore.downloadFrom { (result: [Bar]) in
             if result.count != 0 {
                 self.barStore.allBars = result
                 self.tableView.reloadData()
-                
             }
         }
-        
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         
         let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
         tableView.rowHeight = 80
-        
-        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return barStore!.allBars.count
-        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "BarCell", for: indexPath) as! BarCell
-        //let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
-        
-        //let item = barStore.allBars[indexPath.row]
-        
         let currentBar = barStore.allBars[indexPath.row]
-        
         let name = currentBar.name
         let address = currentBar.address
         
@@ -61,9 +48,8 @@ class TableViewController: UITableViewController  {
         
         return cell
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        
         if segue.identifier == "BarDetails" {
             if let row = tableView.indexPathForSelectedRow?.row {
                 let item = barStore?.allBars[row]
@@ -72,16 +58,11 @@ class TableViewController: UITableViewController  {
                 detailViewController.bar = item
             }
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         print(barStore.allBars.count)
-        
-        
- 
     }
     
 }

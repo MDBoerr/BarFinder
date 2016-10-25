@@ -11,13 +11,11 @@ import UIKit
 import Firebase
 
 class BarStore {
-
+    
     static let sharedInstance = BarStore()
     var allBars : [Bar] = []
-    var detailBar : Bar!
-    
     var ref: FIRDatabaseReference!
-
+    
     func giveBarArray() -> [Bar] {
         return allBars
     }
@@ -27,7 +25,6 @@ class BarStore {
         let name = bar.name
         let address = bar.address
         let barRef = ref.child("Bars").child(bar.name).setValue(["Name" : name, "Address" : address])
-        //  let refName = barDictRef.
         
     }
     func downloadFrom(completion: @escaping ([Bar]) -> ()) {
@@ -50,33 +47,4 @@ class BarStore {
             completion(self.allBars)
         })}
     
-    //    func getStores(completion: @escaping ([Store]) -> ())  {
-    //    var ref: FIRDatabaseReference!
-    //
-    //
-    //    ref = FIRDatabase.database().reference().child("stores")
-    //
-    //
-    //    ref.observe(.value, with: { snapshot in
-    //    self.storeCollection = []
-    //    if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-    //    for snap in snapshots {
-    //    if let storeDict = snap.value as? Dictionary<String, Any> {
-    //
-    //    let store = Store(name: storeDict["name"] as! String,
-    //    houseNumber: snap.key,
-    //    description: storeDict["description"] as! String,
-    //    latitude: storeDict["latitude"] as! Double,
-    //    longitude: storeDict["longitude"] as! Double,
-    //    category: storeDict["category"] as! String,
-    //    image: storeDict["image"] as! String)
-    //    self.storeCollection.append(store)
-    //    
-    //    }
-    //    }
-    //    }
-    //    
-    //    completion(self.storeCollection)
-    //    })
-    //}
 }
