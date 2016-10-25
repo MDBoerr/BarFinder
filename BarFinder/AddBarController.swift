@@ -14,7 +14,7 @@ class AddBarController: UIViewController {
     @IBOutlet var addressField: UITextField!
 
     var bar: Bar?
-    var barStore : BarStore? = BarStore()
+    var barStore : BarStore = BarStore()
     var barArray : [Bar] = []
     
     
@@ -22,7 +22,7 @@ class AddBarController: UIViewController {
         super.viewDidLoad()
         
         //var barStorage = BarStore()
-        //barArray = barStore!.allBars
+        //barArray = barStore.allBars
     }
     
     @IBAction func createNewBar(_ sender: AnyObject) {
@@ -31,9 +31,8 @@ class AddBarController: UIViewController {
             let myAddress : String = (addressField?.text)!
             print(myName, myAddress)
             let newBar = Bar(name: myName, address: myAddress)
-            barStore?.allBars.append(newBar)
+            barStore.allBars.append(newBar)
         }
-        
         
     }
     

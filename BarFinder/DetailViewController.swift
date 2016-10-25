@@ -19,7 +19,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var addressLabel: UILabel!
     
     var bar : Bar! {
-        //Setting the title in the navigationbar (doesn't give the value yet)
+        //Setting the title in the navigationbar
         didSet {
             navigationItem.title = bar.name
         }
@@ -28,13 +28,9 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
        
-        //AddressLabel is linked properly now but doesn't show the right value yet..
-        
+        //AddressLabel showing the corresponding address
         addressLabel.text = bar?.address
         
     }
-
-     
-        
 
 }
