@@ -27,6 +27,9 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, UIImag
         
         present(imagePicker, animated: true, completion: nil)
     }
+    @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
     
     var bar: Bar?
     var barStore : BarStore = BarStore()
@@ -47,9 +50,9 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, UIImag
             self.navigationController?.popViewController(animated: true)
         } else {
             let title = "Oops!"
-            let message = "You forgot to fill in a correct value"
+            let message = "Seems like you forgot to fill in a correct value"
             let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
-            let gotTheMessage = UIAlertAction(title: "Got it", style: .cancel, handler: nil)
+            let gotTheMessage = UIAlertAction(title: "Try again", style: .cancel, handler: nil)
             ac.addAction(gotTheMessage)
             
             present(ac, animated: true, completion: nil)

@@ -156,12 +156,16 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Xr0-NK-cA2" firstAttribute="leading" secondItem="OV3-Sl-D4A" secondAttribute="leading" id="3EM-Tm-jfD"/>
                             <constraint firstItem="Xr0-NK-cA2" firstAttribute="top" secondItem="6sk-X8-Y4p" secondAttribute="bottom" id="6lw-gN-Ss5"/>
                             <constraint firstAttribute="trailing" secondItem="Xr0-NK-cA2" secondAttribute="trailing" id="c8M-Hp-eEK"/>
                             <constraint firstItem="DjG-JN-VSu" firstAttribute="top" secondItem="Xr0-NK-cA2" secondAttribute="bottom" id="mlt-W4-9Cp"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="chM-fS-wjG" appends="YES" id="RTY-gV-yOO"/>
+                        </connections>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -172,6 +176,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3LK-NJ-dOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="chM-fS-wjG">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="9cU-MB-s2e" id="TUj-ny-Zid"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2180" y="461.91904047976016"/>
         </scene>
