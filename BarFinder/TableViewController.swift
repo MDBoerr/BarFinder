@@ -31,7 +31,7 @@ class TableViewController: UITableViewController  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        barStore.createBar()
+        //barStore.createBar()
        // barStore.uploadTo()
         
         var barInfo = barStore?.allBars
@@ -87,6 +87,8 @@ class TableViewController: UITableViewController  {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        print(barStore.allBars.count)
         
         tableView.reloadData()
     }
