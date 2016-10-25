@@ -23,6 +23,7 @@ class TableViewController: UITableViewController  {
         barStore.downloadFrom { (result: [Bar]) in
             if result.count != 0 {
                 self.barStore.allBars = result
+                self.tableView.reloadData()
                 
             }
         }
@@ -62,7 +63,7 @@ class TableViewController: UITableViewController  {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+
         if segue.identifier == "BarDetails" {
             if let row = tableView.indexPathForSelectedRow?.row {
                 let item = barStore?.allBars[row]
@@ -80,7 +81,7 @@ class TableViewController: UITableViewController  {
         print(barStore.allBars.count)
         
         
-        tableView.reloadData()
+ 
     }
     
 }

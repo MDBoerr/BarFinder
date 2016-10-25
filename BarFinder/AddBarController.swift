@@ -12,29 +12,33 @@ class AddBarController: UIViewController {
     
     @IBOutlet var nameField: UITextField!
     @IBOutlet var addressField: UITextField!
-
+    
     var bar: Bar?
     var barStore : BarStore = BarStore()
     var barArray : [Bar] = []
+    //let addBar = AddBarController()
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         //var barStorage = BarStore()
         //barArray = barStore.allBars
     }
     
     @IBAction func createNewBar(_ sender: AnyObject) {
-        if (nameField.text != nil) && addressField.text != nil {
+        if (nameField.text != "") && addressField.text != "" {
             let myName : String = (nameField?.text)!
             let myAddress : String = (addressField?.text)!
             print(myName, myAddress)
             let newBar = Bar(name: myName, address: myAddress)
             barStore.allBars.append(newBar)
             barStore.uploadTo(bar: newBar)
+            self.navigationController?.popViewController(animated: true)
+        }else {
+            self.navigationController?.popViewController(animated: true)
         }
-        
     }
-    
 }
