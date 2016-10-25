@@ -23,11 +23,17 @@ class TableViewController: UITableViewController  {
             }
         }
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        let color = UIColor.init(red: 0, green: 0.4, blue: 0.1, alpha: 0)
+
         
-        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
+        let insets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
         tableView.rowHeight = 80
+        
+        tabBarController?.tabBar.barTintColor = color
+        navigationController?.navigationBar.barTintColor = color
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
