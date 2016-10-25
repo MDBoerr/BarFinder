@@ -45,8 +45,15 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, UIImag
             barStore.allBars.append(newBar)
             barStore.uploadTo(bar: newBar)
             self.navigationController?.popViewController(animated: true)
-        }else {
-            self.navigationController?.popViewController(animated: true)
+        } else {
+            let title = "Oops!"
+            let message = "You forgot to fill in a correct value"
+            let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+            let gotTheMessage = UIAlertAction(title: "Got it", style: .cancel, handler: nil)
+            ac.addAction(gotTheMessage)
+            
+            present(ac, animated: true, completion: nil)
+            //self.navigationController?.popViewController(animated: true)
         }
     }
     
