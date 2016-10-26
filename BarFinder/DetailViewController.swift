@@ -13,8 +13,6 @@ import Firebase
 class DetailViewController: UIViewController {
     
     let barStore : BarStore! = BarStore()
-    let barCellNameLabel = BarCell().nameLabel
-    let barCellAddress  = BarCell().addressLabel
     
     @IBOutlet var addressLabel: UILabel!
     
