@@ -17,9 +17,9 @@ class BarStore {
     static let sharedInstance = BarStore()
     var allBars : [Bar] = []
     var ref: FIRDatabaseReference!
-    var storeRef : FIRStorageReference!
-    var storage = FIRStorage.storage()
-    let gsRef = FIRStorage.storage().reference(forURL: "gs://barfinder-fc3ee.appspot.com")
+//    var storeRef : FIRStorageReference!
+//    var storage = FIRStorage.storage()
+//    let gsRef = FIRStorage.storage().reference(forURL: "gs://barfinder-fc3ee.appspot.com")
     
     func giveBarArray() -> [Bar] {
         return allBars
@@ -30,7 +30,7 @@ class BarStore {
         let name = bar.name
         let address = bar.address
         //let image = bar.image
-        let barRef = ref.child("Bars").child(bar.name).setValue(["Name" : name, "Address" : address])
+        //let barRef = ref.child("Bars").child(bar.name).setValue(["Name" : name, "Address" : address])
     
     }
     func downloadFrom(completion: @escaping ([Bar]) -> ()) {

@@ -22,8 +22,7 @@ class TableViewController: UITableViewController  {
                 self.tableView.reloadData()
             }
         }
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        
+
         let color = UIColor.init(red: 0, green: 0.4, blue: 0.1, alpha: 0)
 
         let insets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
