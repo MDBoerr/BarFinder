@@ -34,6 +34,7 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, UIImag
     var bar: Bar?
     var barStore : BarStore = BarStore()
     var barArray : [Bar] = []
+    var imageStore : ImageStoreController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +52,8 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, UIImag
         } else {
             let title = "Oops!"
             let message = "Seems like you forgot to fill in a correct value"
-            let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
-            let gotTheMessage = UIAlertAction(title: "Try again", style: .cancel, handler: nil)
+            let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let gotTheMessage = UIAlertAction(title: "Try again", style: .default, handler: nil)
             ac.addAction(gotTheMessage)
             
             present(ac, animated: true, completion: nil)
