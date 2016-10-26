@@ -67,6 +67,7 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, UIImag
         
         imageView.image = image
         
+        
         dismiss(animated: true, completion: nil)
     }
 }
