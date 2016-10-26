@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     var mapView : MKMapView!
     var locationManager = CLLocationManager()
@@ -59,6 +59,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         locationButton.addTarget(self,  action:#selector(whatIsMyLocation), for: .touchDown)
         
+        let locationParents = CLLocationCoordinate2D(latitude: 52.3147612, longitude: 4.682027299999959)
+        //let locationBar = m
+        
+        let span = MKCoordinateSpanMake(0.05, 0.05)
+        
+        let regionParents = MKCoordinateRegion(center: locationParents, span: span)
+        mapView.setRegion(regionParents, animated: true)
+        
+        let annotationParents = MKPointAnnotation()
+        annotationParents.coordinate = locationParents
+        annotationParents.title = "Cafe Fonteyn"
+        mapView.addAnnotation(annotationParents)
+        
+
+        
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.longlat = manager.location!.coordinate
@@ -92,5 +107,4 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         default: break
         }
     }
-    
 }

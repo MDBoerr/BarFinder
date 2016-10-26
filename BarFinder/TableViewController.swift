@@ -22,14 +22,10 @@ class TableViewController: UITableViewController  {
                 self.tableView.reloadData()
             }
         }
-<<<<<<< HEAD
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        
         let color = UIColor.init(red: 0, green: 0.4, blue: 0.1, alpha: 0)
 
-        
-=======
-
->>>>>>> 66ca79542f19ac69656cbac219850d995f09daa0
         let insets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
@@ -51,6 +47,7 @@ class TableViewController: UITableViewController  {
         let currentBar = barStore.allBars[indexPath.row]
         let name = currentBar.name
         let address = currentBar.address
+
         
         cell.nameLabel.text = name
         cell.addressLabel.text = address

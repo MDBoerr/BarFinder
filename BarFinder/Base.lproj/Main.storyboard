@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ej7-iS-4in">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ej7-iS-4in">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -136,22 +136,33 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nk-xz-rdK">
-                                        <state key="normal" title="Save"/>
-                                        <connections>
-                                            <action selector="createNewBar:" destination="9cU-MB-s2e" eventType="touchUpInside" id="8VO-0a-hRQ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q54-gd-uGQ">
-                                        <state key="normal" title="Take a picture"/>
-                                        <connections>
-                                            <action selector="takePicture:" destination="9cU-MB-s2e" eventType="touchUpInside" id="YGN-uk-thI"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="6ua-dG-4hF"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gv0-Pz-g2G">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nk-xz-rdK">
+                                                <state key="normal" title="Save"/>
+                                                <connections>
+                                                    <action selector="createNewBar:" destination="9cU-MB-s2e" eventType="touchUpInside" id="8VO-0a-hRQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="1nk-xz-rdK" firstAttribute="top" secondItem="Gv0-Pz-g2G" secondAttribute="top" id="D3z-CK-KNW"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJl-Sy-ri9">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q54-gd-uGQ">
+                                                <state key="normal" title="Take a picture"/>
+                                                <connections>
+                                                    <action selector="takePicture:" destination="9cU-MB-s2e" eventType="touchUpInside" id="YGN-uk-thI"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="6ua-dG-4hF"/>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="6ua-dG-4hF" firstAttribute="leading" secondItem="1nk-xz-rdK" secondAttribute="leading" id="qEC-AB-KqN"/>
+                                    <constraint firstItem="q54-gd-uGQ" firstAttribute="leading" secondItem="1nk-xz-rdK" secondAttribute="leading" id="10Q-ht-EQK"/>
                                 </constraints>
                             </stackView>
                         </subviews>

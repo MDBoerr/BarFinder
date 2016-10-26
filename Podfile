@@ -6,6 +6,7 @@ target 'BarFinder' do
   use_frameworks!
 pod ‘Firebase/Core’
 pod 'Firebase/Database'
+pod ‘Firebase/Storage’
 
   # Pods for BarFinder
 end
