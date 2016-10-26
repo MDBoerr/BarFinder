@@ -66,6 +66,8 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, UIImag
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         imageView.image = image
+        let newImage = imageView.image
+        barStore.imageUploadTo(image: newImage!)
         
         
         dismiss(animated: true, completion: nil)
