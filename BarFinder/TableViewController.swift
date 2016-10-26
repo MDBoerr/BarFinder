@@ -33,6 +33,10 @@ class TableViewController: UITableViewController  {
         
         tabBarController?.tabBar.barTintColor = color
         navigationController?.navigationBar.barTintColor = color
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: UIColor.white]
+        tabBarController?.tabBar.tintColor = UIColor.white
         
     }
     
