@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BarFinderLaunchScreen-1" translatesAutoresizingMaskIntoConstraints="NO" id="tw9-EW-fCn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BarFinderLaunchScreen2x" translatesAutoresizingMaskIntoConstraints="NO" id="tw9-EW-fCn">
                                 <frame key="frameInset" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -32,6 +32,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BarFinderLaunchScreen-1" width="187" height="333"/>
+        <image name="BarFinderLaunchScreen2x" width="375" height="667"/>
     </resources>
 </document>
