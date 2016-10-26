@@ -30,7 +30,7 @@ class BarStore {
         let name = bar.name
         let address = bar.address
         //let image = bar.image
-        //let barRef = ref.child("Bars").child(bar.name).setValue(["Name" : name, "Address" : address])
+        _ = ref.child("Bars").child(name).setValue(["Name" : name, "Address" : address])
     
     }
     func downloadFrom(completion: @escaping ([Bar]) -> ()) {
