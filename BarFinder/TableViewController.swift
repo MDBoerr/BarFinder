@@ -22,8 +22,7 @@ class TableViewController: UITableViewController  {
                 self.tableView.reloadData()
             }
         }
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        
+
         let color = UIColor.init(red: 0, green: 0.4, blue: 0.1, alpha: 0)
 
         let insets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -33,6 +32,10 @@ class TableViewController: UITableViewController  {
         
         tabBarController?.tabBar.barTintColor = color
         navigationController?.navigationBar.barTintColor = color
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: UIColor.white]
+        tabBarController?.tabBar.tintColor = UIColor.white
         
     }
     
