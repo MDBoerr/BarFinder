@@ -11,12 +11,12 @@ import UIKit
 import Firebase
 
 
-
 class BarStore {
     
     static let sharedInstance = BarStore()
     var allBars : [Bar] = []
     var ref: FIRDatabaseReference!
+    
     var storeRef : FIRStorageReference!
     var storage = FIRStorage.storage()
     let gsRef = FIRStorage.storage().reference(forURL: "gs://barfinder-fc3ee.appspot.com")
