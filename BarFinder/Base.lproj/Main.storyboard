@@ -221,7 +221,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="launchscreenCocktail" translatesAutoresizingMaskIntoConstraints="NO" id="Sg9-sZ-wzo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sg9-sZ-wzo">
                                 <frame key="frameInset" minX="97" minY="97" width="181" height="181"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -231,6 +231,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="ImageView" destination="Sg9-sZ-wzo" id="IGV-BW-UUW"/>
                         <outlet property="addressLabel" destination="WXd-Et-pwS" id="PZT-8C-ZkR"/>
                     </connections>
                 </viewController>
@@ -280,6 +281,5 @@
     </scenes>
     <resources>
         <image name="MapIcon" width="48" height="32"/>
-        <image name="launchscreenCocktail" width="1080" height="1920"/>
     </resources>
 </document>

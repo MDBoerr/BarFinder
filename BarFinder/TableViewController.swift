@@ -50,11 +50,11 @@ class TableViewController: UITableViewController  {
         let currentBar = barStore.allBars[indexPath.row]
         let name = currentBar.name
         let address = currentBar.address
-
+        let image = currentBar.image
         
         cell.nameLabel.text = name
         cell.addressLabel.text = address
-        cell.imageView?.image = UIImage(named: "MapIcon.png")
+       // cell.imageView?.image = image as UIImage
         
         return cell
     }

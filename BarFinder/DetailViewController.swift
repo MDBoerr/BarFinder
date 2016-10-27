@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     let barStore : BarStore! = BarStore()
     
     @IBOutlet var addressLabel: UILabel!
+    @IBOutlet var imageView: UIImageView!
     
     var bar : Bar! {
         //Setting the title in the navigationbar
@@ -28,6 +29,7 @@ class DetailViewController: UIViewController {
         
         //AddressLabel showing the corresponding address
         addressLabel.text = bar?.address
+      //  imageView.image = bar.image
         
     }
     

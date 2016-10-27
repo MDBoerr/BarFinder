@@ -14,12 +14,13 @@ import Firebase
 
 class BarStore {
     
-    static let sharedInstance = BarStore()
+    static let sharedInstance = BarStore.self
+    
     var allBars : [Bar] = []
     var ref: FIRDatabaseReference!
     var gsRef : FIRStorageReference!
-//    var storage = FIRStorage.storage()
-  //  let gsRef = FIRStorage.storage().reference(forURL: "gs://barfinder-fc3ee.appspot.com")
+    var currentBar : Bar?
+
     
     func giveBarArray() -> [Bar] {
         return allBars
@@ -29,9 +30,9 @@ class BarStore {
         
         let name = bar.name
         let address = bar.address
-        //let image = bar.image
-        _ = ref.child("Bars").child(name).setValue(["Name" : name, "Address" : address])
-    
+        let image = bar.image
+        _ = ref.child("Bars").child(name).setValue(["Name" : name, "Address" : address, "Image": image])
+        
     }
     func downloadFrom(completion: @escaping ([Bar]) -> ()) {
         ref = FIRDatabase.database().reference()
@@ -44,7 +45,8 @@ class BarStore {
                     if let barDict = snap.value as? Dictionary<String, Any> {
                         let barName = barDict["Name"] as! String
                         let barAddress = barDict["Address"] as! String
-                        let bar = Bar(name: barName, address: barAddress)
+                        let barImage = barDict["Image"] as! String
+                        let bar = Bar(name: barName, address: barAddress, image: barImage)
                         self.allBars.append(bar)
                     }
                     
@@ -52,9 +54,10 @@ class BarStore {
             }
             completion(self.allBars)
         })}
+    
     func imageUploadTo(image: UIImage) -> String {
-        let gsRef = FIRStorage.storage().reference(forURL: "gs://barfinder-fc3ee.appspot.com")
-
+        let gsRef = FIRStorage.storage().reference(forURL: "gs://barfinder-fc3ee.appspot.com/Images/")
+        
         let imageData = UIImageJPEGRepresentation(image, 0.5)
         let imageName = "\(Date().timeIntervalSince1970).jpeg"
         let metaData = FIRStorageMetadata()
@@ -68,16 +71,16 @@ class BarStore {
         return imageName
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    func imageDownloadFrom() {
+        let downloadRef = gsRef.child(currentBar!.image)
+        downloadRef.data(withMaxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+            if (error != nil) {
+                // Uh-oh, an error occurred!
+            } else {
+                // Data for "images/island.jpg" is returned
+                // ... let islandImage: UIImage! = UIImage(data: data!)
+                print("Download: \(downloadRef)")
+            }
+        }
+    }
 }
