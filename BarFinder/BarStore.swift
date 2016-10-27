@@ -44,9 +44,9 @@ class BarStore {
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshots {
                     if let barDict = snap.value as? Dictionary<String, Any> {
-                        
+                        let barImageName = barDict["ImageName"] as! String
                         let gsRef = FIRStorage.storage().reference(forURL: "gs://barfinder-fc3ee.appspot.com/Images/")
-                        let downloadRef = gsRef.child("1477565711.49933.jpeg")
+                        let downloadRef = gsRef.child(barImageName)
                         var downloadImage : UIImage!
                         downloadRef.data(withMaxSize: 4 * 1024 * 1024) { (data, error) -> Void in
                             if (error != nil) {
@@ -54,13 +54,14 @@ class BarStore {
                             } else {
                                 // Data for "images/island.jpg" is returned
                                 downloadImage = UIImage(data: data!)
+//                                self.imageView.image = downloadImage
                                 print("Download: \(downloadRef)")
                             
                         
 
                         let barName = barDict["Name"] as! String
                         let barAddress = barDict["Address"] as! String
-                        let barImageName = barDict["ImageName"] as! String
+                      //  let barImageName = barDict["ImageName"] as! String
 //                        let barImage = barDict["Image"] as! UIImage
                         let bar = Bar(name: barName, address: barAddress, imageName: barImageName)
                         let barImage = downloadImage
