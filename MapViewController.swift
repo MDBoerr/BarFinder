@@ -70,6 +70,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let annotationParents = MKPointAnnotation()
         annotationParents.coordinate = locationParents
         annotationParents.title = "Cafe Fonteyn"
+        annotationParents.subtitle = "Adresje 14"
         mapView.addAnnotation(annotationParents)
         
 
