@@ -12,12 +12,13 @@ class Bar : NSObject {
     
     var name : String
     var address : String
-    var image : String
+    var imageName : String
+    var image : UIImage?
 
-    init(name: String, address: String, image: String) {
+    init(name: String, address: String, imageName: String) {
         self.name = name
         self.address = address
-        self.image = image
+        self.imageName = imageName
         
         super.init()
     }

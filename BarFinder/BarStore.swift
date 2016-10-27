@@ -30,8 +30,9 @@ class BarStore {
         
         let name = bar.name
         let address = bar.address
+        let imageName = bar.imageName
         let image = bar.image
-        _ = ref.child("Bars").child(name).setValue(["Name" : name, "Address" : address, "Image": image])
+        _ = ref.child("Bars").child(name).setValue(["Name" : name, "Address" : address, "ImageName": imageName])
         
     }
     func downloadFrom(completion: @escaping ([Bar]) -> ()) {
@@ -43,16 +44,37 @@ class BarStore {
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshots {
                     if let barDict = snap.value as? Dictionary<String, Any> {
+                        
+                        let gsRef = FIRStorage.storage().reference(forURL: "gs://barfinder-fc3ee.appspot.com/Images/")
+                        let downloadRef = gsRef.child("1477565711.49933.jpeg")
+                        var downloadImage : UIImage!
+                        downloadRef.data(withMaxSize: 4 * 1024 * 1024) { (data, error) -> Void in
+                            if (error != nil) {
+                                // Uh-oh, an error occurred!
+                            } else {
+                                // Data for "images/island.jpg" is returned
+                                downloadImage = UIImage(data: data!)
+                                print("Download: \(downloadRef)")
+                            
+                        
+
                         let barName = barDict["Name"] as! String
                         let barAddress = barDict["Address"] as! String
-                        let barImage = barDict["Image"] as! String
-                        let bar = Bar(name: barName, address: barAddress, image: barImage)
+                        let barImageName = barDict["ImageName"] as! String
+//                        let barImage = barDict["Image"] as! UIImage
+                        let bar = Bar(name: barName, address: barAddress, imageName: barImageName)
+                        let barImage = downloadImage
+                        bar.image = barImage
+                        
                         self.allBars.append(bar)
                     }
+                            completion(self.allBars)
+                        }}
                     
                 }
+                
             }
-            completion(self.allBars)
+            
         })}
     
     func imageUploadTo(image: UIImage) -> String {
@@ -71,16 +93,19 @@ class BarStore {
         return imageName
     }
     
-    func imageDownloadFrom() {
-        let downloadRef = gsRef.child(currentBar!.image)
-        downloadRef.data(withMaxSize: 1 * 1024 * 1024) { (data, error) -> Void in
-            if (error != nil) {
-                // Uh-oh, an error occurred!
-            } else {
-                // Data for "images/island.jpg" is returned
-                // ... let islandImage: UIImage! = UIImage(data: data!)
-                print("Download: \(downloadRef)")
-            }
-        }
-    }
+//    func imageDownloadFrom(completion: @escaping (UIImage) -> ()) {
+//        let gsRef = FIRStorage.storage().reference(forURL: "gs://barfinder-fc3ee.appspot.com/Images/")
+//        let downloadRef = gsRef.child("1477558483.08287.jpeg")
+//        var downloadImage : UIImage!
+//        downloadRef.data(withMaxSize: 4 * 1024 * 1024) { (data, error) -> Void in
+//            if (error != nil) {
+//                // Uh-oh, an error occurred!
+//            } else {
+//                // Data for "images/island.jpg" is returned
+//                downloadImage = UIImage(data: data!)
+//                print("Download: \(downloadRef)")
+//            }
+//        }
+//        completion(downloadImage)
+//    }
 }

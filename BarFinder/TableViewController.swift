@@ -13,15 +13,23 @@ class TableViewController: UITableViewController  {
     
     let barStore: BarStore! = BarStore()
     var bar : Bar?
+    var barArray : [Bar] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         barStore.downloadFrom { (result: [Bar]) in
             if result.count != 0 {
-                self.barStore.allBars = result
+                self.barArray = result
                 self.tableView.reloadData()
             }
         }
+//        barStore.imageDownloadFrom { (result:[Bar]) in
+//            if result.count != 0 {
+//                self.barStore.allBars = result
+//            }
+//        }
+
+        
 
         let color = UIColor.init(red: 0, green: 0.4, blue: 0.1, alpha: 0)
 
@@ -54,7 +62,8 @@ class TableViewController: UITableViewController  {
         
         cell.nameLabel.text = name
         cell.addressLabel.text = address
-       // cell.imageView?.image = image as UIImage
+        cell.imageView?.image = image
+        
         
         return cell
     }

@@ -44,9 +44,9 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, UIImag
         if (nameField.text != "") && addressField.text != "" {
             let myName : String = (nameField?.text)!
             let myAddress : String = (addressField?.text)!
-            let myImage = barStore.imageUploadTo(image: imageView.image!)
+            let myImageName = barStore.imageUploadTo(image: imageView.image!)
             print(myName, myAddress)
-            let newBar = Bar(name: myName, address: myAddress, image: myImage)
+            let newBar = Bar(name: myName, address: myAddress, imageName: myImageName)
             barStore.allBars.append(newBar)
             barStore.uploadTo(bar: newBar)
             self.navigationController?.popViewController(animated: true)
