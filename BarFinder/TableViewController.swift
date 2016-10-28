@@ -35,12 +35,16 @@ class TableViewController: UITableViewController  {
 
         
 
-        let color = UIColor.init(red: 0.152, green: 0.648, blue: 0.390, alpha: 0)
+       // let color = UIColor.init(red: 0.1, green: 0.4, blue: 0.390, alpha: 0)
+        let color : UIColor = #colorLiteral(red: 0.2901960784, green: 0.5647058824, blue: 0.8862745098, alpha: 1)
+        let color2 : UIColor = #colorLiteral(red: 0.1298420429, green: 0.1298461258, blue: 0.1298439503, alpha: 1)
 
         let insets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
         tableView.rowHeight = 80
+        //tableView.backgroundColor = color2
+        
         
         tabBarController?.tabBar.barTintColor = color
         navigationController?.navigationBar.barTintColor = color
@@ -48,6 +52,7 @@ class TableViewController: UITableViewController  {
         navigationController?.navigationBar.titleTextAttributes =
             [NSForegroundColorAttributeName: UIColor.white]
         tabBarController?.tabBar.tintColor = UIColor.white
+
         
     }
     
@@ -67,6 +72,7 @@ class TableViewController: UITableViewController  {
         cell.nameLabel.text = name
         cell.addressLabel.text = address
         cell.imageLabel.image = image
+        
         
         
         return cell

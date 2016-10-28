@@ -17,6 +17,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var longlat: CLLocationCoordinate2D!
     var region: MKCoordinateRegion!
     
+    
     override func loadView() {
         mapView = MKMapView()
         view = mapView
