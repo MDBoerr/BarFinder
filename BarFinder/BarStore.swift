@@ -31,7 +31,7 @@ class BarStore {
         let name = bar.name
         let address = bar.address
         let imageName = bar.imageName
-        let image = bar.image
+      //  let image = bar.image
         _ = ref.child("Bars").child(name).setValue(["Name" : name, "Address" : address, "ImageName": imageName])
         
     }
