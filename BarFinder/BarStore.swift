@@ -73,7 +73,7 @@ class BarStore {
     func imageUploadTo(image: UIImage) -> String {
         let gsRef = FIRStorage.storage().reference(forURL: "gs://barfinder-fc3ee.appspot.com/Images/")
         
-        let imageData = UIImageJPEGRepresentation(image, 0.5)
+        let imageData = UIImageJPEGRepresentation(image, 0.8)
         let imageName = "\(Date().timeIntervalSince1970).jpeg"
         let metaData = FIRStorageMetadata()
         metaData.contentType = "image/jpeg"
