@@ -27,12 +27,15 @@ class TableViewController: UITableViewController  {
                 self.tableView.reloadData()
             }
         }
+//        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "FireBase reloadData"), object: nil, queue: OperationQueue.main) { (receivenotification) in
+//            self.tableView.reloadData()
+//        }
 
 
         
 
         let color : UIColor = #colorLiteral(red: 0.2901960784, green: 0.5647058824, blue: 0.8862745098, alpha: 1)
-        let color2 : UIColor = #colorLiteral(red: 0.1298420429, green: 0.1298461258, blue: 0.1298439503, alpha: 1)
+        //let color2 : UIColor = #colorLiteral(red: 0.1298420429, green: 0.1298461258, blue: 0.1298439503, alpha: 1)
 
         let insets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tableView.contentInset = insets
@@ -51,8 +54,7 @@ class TableViewController: UITableViewController  {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return barStore!.allBars.count
+                return barStore!.allBars.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,6 +68,7 @@ class TableViewController: UITableViewController  {
         cell.nameLabel.text = name
         cell.addressLabel.text = address
         cell.imageLabel.image = image
+        
         
         
         
@@ -89,14 +92,34 @@ class TableViewController: UITableViewController  {
 
         print(barStore.allBars.count)
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.reloadData()
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "FireBase reloadData"), object: nil, queue: OperationQueue.main) { (receivenotification) in
+            self.tableView.reloadData()
+        }
+
+//        barStore.downloadFrom { (result: [Bar]) in
+//            if result.count != 0 {
+//                self.barArray = result
+//                self.tableView.reloadData()
+//            }
+      //  }
+
+        self.tableView.reloadData()
+        print(barStore.allBars.count)
+
+        
+    }
     func refreshData() {
         self.tableView.reloadData()
-//        
+    
+        
 //        self.tableView.refreshControl?.beginRefreshing()
-//        self.tableView.reloadData()
-//
+//        
+//       
 //        self.tableView.refreshControl?.endRefreshing()
         
     }
-    
+
 }
