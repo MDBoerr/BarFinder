@@ -36,9 +36,6 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
-                                            <connections>
-                                                <outletCollection property="gestureRecognizers" destination="xFF-c2-7hN" appends="YES" id="7g6-7H-qfX"/>
-                                            </connections>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="MapIcon" id="m5J-rH-8dZ">
                                             <frame key="frameInset" minX="15" minY="5" width="48" height="32"/>
@@ -46,9 +43,6 @@
                                         </imageView>
                                     </subviews>
                                     <gestureRecognizers/>
-                                    <connections>
-                                        <outletCollection property="gestureRecognizers" destination="xFF-c2-7hN" appends="YES" id="1kP-1H-V3l"/>
-                                    </connections>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="addressLabel" destination="TCT-MR-cj2" id="JKR-OL-8e4"/>
@@ -71,7 +65,6 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kac-se-l5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="xFF-c2-7hN"/>
             </objects>
             <point key="canvasLocation" x="1276" y="462"/>
         </scene>

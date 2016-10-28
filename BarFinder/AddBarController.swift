@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 class AddBarController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -16,16 +17,55 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, UIImag
     @IBAction func takePicture(_ sender: UIButton) {
         
         let imagePicker = UIImagePickerController()
+//        
+//        let title = "Would you like to take a picture or choose one from PhotoLibrary"
+//        let ac = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
+//        ac.popoverPresentationController?.sourceView = self.view
+//        let takePhoto = UIAlertAction(title: "Camera", style: .default) { (alert: UIAlertAction!) in
+//            imagePicker.sourceType = .camera
+//        }
+//        let useLibrary = UIAlertAction(title: "Photo Library", style: .default) { (alert: UIAlertAction) in
+//            imagePicker.sourceType = .photoLibrary
+//        }
+//        ac.addAction(takePhoto)
+//        ac.addAction(useLibrary)
+//        
+//        present(ac, animated: true, completion: nil)
+//        
+        
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            imagePicker.sourceType = .camera
+            let title = "Would you like to take a picture or choose one from PhotoLibrary"
+            let ac = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
+            ac.popoverPresentationController?.sourceView = self.view
+            let takePhoto = UIAlertAction(title: "Camera", style: .default) { (alert: UIAlertAction!) in
+                imagePicker.sourceType = .camera
+             //   present(imagePicker, animated: true, completion: nil)
+            }
+            let useLibrary = UIAlertAction(title: "Photo Library", style: .default) { (alert: UIAlertAction) in
+                imagePicker.sourceType = .photoLibrary
+            //    present(imagePicker, animated: true, completion: nil)
+            }
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (alert: UIAlertAction) in
+                
+            }
+            ac.addAction(takePhoto)
+            ac.addAction(useLibrary)
+            ac.addAction(cancel)
+ 
+            present(ac, animated: true, completion: nil)
+            //present(imagePicker, animated: true, completion: nil)
+
+            
+            //imagePicker.sourceType = .camera
         } else {
             imagePicker.sourceType = .photoLibrary
+            present(imagePicker, animated: true, completion: nil)
         }
         
         imagePicker.delegate = self
-        
-        present(imagePicker, animated: true, completion: nil)
+//        
+//        present(imagePicker, animated: true, completion: nil)
     }
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
@@ -50,6 +90,7 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, UIImag
             barStore.allBars.append(newBar)
             barStore.uploadTo(bar: newBar)
             self.navigationController?.popViewController(animated: true)
+
         } else {
             let title = "Oops!"
             let message = "Seems like you forgot to fill in a correct value"

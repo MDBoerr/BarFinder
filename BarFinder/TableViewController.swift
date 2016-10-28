@@ -17,6 +17,10 @@ class TableViewController: UITableViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshControl = UIRefreshControl()
+       // refreshControl?.tintColor = .white
+        refreshControl?.addTarget(self, action:#selector(refreshData), for: UIControlEvents.valueChanged)
+        tableView.addSubview(refreshControl!)
         barStore.downloadFrom { (result: [Bar]) in
             if result.count != 0 {
                 self.barArray = result
@@ -81,8 +85,18 @@ class TableViewController: UITableViewController  {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tableView.reloadData()
 
         print(barStore.allBars.count)
+    }
+    func refreshData() {
+        self.tableView.reloadData()
+//        
+//        self.tableView.refreshControl?.beginRefreshing()
+//        self.tableView.reloadData()
+//
+//        self.tableView.refreshControl?.endRefreshing()
+        
     }
     
 }
