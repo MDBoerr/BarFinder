@@ -18,7 +18,7 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BarCell" textLabel="bHO-wS-PrU" detailTextLabel="TCT-MR-cj2" imageView="m5J-rH-8dZ" style="IBUITableViewCellStyleSubtitle" id="8dd-XN-nNu" customClass="BarCell" customModule="BarFinder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8dd-XN-nNu" id="fsH-Zb-rkS">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="8dd-XN-nNu" id="fsH-Zb-rkS">
                                     <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -37,7 +37,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="MapIcon" id="m5J-rH-8dZ">
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" image="MapIcon" id="m5J-rH-8dZ">
                                             <frame key="frameInset" minX="15" minY="5" width="48" height="32"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>

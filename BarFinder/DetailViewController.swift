@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
         //AddressLabel showing the corresponding address
         addressLabel.text = bar?.address
         imageView.image = bar.image
-        
+
     }
     
 }
