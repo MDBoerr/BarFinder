@@ -81,7 +81,7 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, UIImag
         
     }
     @IBAction func createNewBar(_ sender: AnyObject) {
-        if (nameField.text != "") && addressField.text != "" {
+        if (nameField.text != "") && addressField.text != "" && imageView.image != nil {
             let myName : String = (nameField?.text)!
             let myAddress : String = (addressField?.text)!
             let myImageName = barStore.imageUploadTo(image: imageView.image!)
@@ -114,4 +114,7 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, UIImag
         
         dismiss(animated: true, completion: nil)
     }
+
 }
+
+
