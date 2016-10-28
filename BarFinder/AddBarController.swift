@@ -58,7 +58,10 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, UIImag
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Add a new bar"
     }
+
+    
     @IBAction func createNewBar(_ sender: AnyObject) {
         if (nameField.text != "") && addressField.text != "" && imageView.image != nil {
             let myName : String = (nameField?.text)!
