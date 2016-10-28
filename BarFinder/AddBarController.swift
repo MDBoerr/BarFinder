@@ -60,7 +60,6 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, UIImag
         
         navigationItem.title = "Add a new bar"
     }
-
     
     @IBAction func createNewBar(_ sender: AnyObject) {
         if (nameField.text != "") && addressField.text != "" && imageView.image != nil {
