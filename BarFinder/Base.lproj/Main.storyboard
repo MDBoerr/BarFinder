@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ej7-iS-4in">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ej7-iS-4in">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,38 +17,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BarCell" textLabel="bHO-wS-PrU" detailTextLabel="TCT-MR-cj2" imageView="m5J-rH-8dZ" style="IBUITableViewCellStyleSubtitle" id="8dd-XN-nNu" customClass="BarCell" customModule="BarFinder" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BarCell" id="8dd-XN-nNu" customClass="BarCell" customModule="BarFinder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8dd-XN-nNu" id="fsH-Zb-rkS">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" tableViewCell="8dd-XN-nNu" id="fsH-Zb-rkS">
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Name label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bHO-wS-PrU">
-                                            <frame key="frameInset" minX="78" minY="4" width="86" height="21"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ner-kl-JEz"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3W-cq-w36">
+                                            <frame key="frameInset" minX="78" minY="1" width="48" height="13"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TCT-MR-cj2">
-                                            <frame key="frameInset" minX="78" minY="25" width="47" height="15"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <gestureRecognizers/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z83-XF-VKZ">
+                                            <frame key="frameInset" minX="78" minY="17" width="75" height="14"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="MapIcon" id="m5J-rH-8dZ">
-                                            <frame key="frameInset" minX="15" minY="5" width="48" height="32"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </imageView>
                                     </subviews>
                                     <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstItem="K3W-cq-w36" firstAttribute="top" secondItem="fsH-Zb-rkS" secondAttribute="topMargin" id="34L-Dm-gG9"/>
+                                        <constraint firstItem="z83-XF-VKZ" firstAttribute="leading" secondItem="K3W-cq-w36" secondAttribute="leading" id="51B-D3-pNs"/>
+                                        <constraint firstItem="ner-kl-JEz" firstAttribute="leading" secondItem="fsH-Zb-rkS" secondAttribute="leadingMargin" id="AM4-gc-y83"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ner-kl-JEz" secondAttribute="trailing" constant="310" id="HNa-LF-Qop"/>
+                                        <constraint firstItem="ner-kl-JEz" firstAttribute="centerY" secondItem="fsH-Zb-rkS" secondAttribute="centerY" constant="-4.5" id="Igd-yk-qEJ"/>
+                                        <constraint firstItem="z83-XF-VKZ" firstAttribute="bottom" secondItem="fsH-Zb-rkS" secondAttribute="bottomMargin" id="JPP-WC-DNg"/>
+                                        <constraint firstItem="ner-kl-JEz" firstAttribute="width" secondItem="fsH-Zb-rkS" secondAttribute="height" multiplier="49:44" id="JRe-1y-PFd"/>
+                                        <constraint firstAttribute="bottom" secondItem="ner-kl-JEz" secondAttribute="bottom" constant="2" id="aBz-oP-Gnl"/>
+                                        <constraint firstItem="ner-kl-JEz" firstAttribute="top" secondItem="fsH-Zb-rkS" secondAttribute="top" constant="-7" id="j8v-S7-bt2"/>
+                                        <constraint firstItem="K3W-cq-w36" firstAttribute="leading" secondItem="ner-kl-JEz" secondAttribute="trailing" constant="21" id="npG-Fy-Cw3"/>
+                                        <constraint firstItem="z83-XF-VKZ" firstAttribute="leading" secondItem="ner-kl-JEz" secondAttribute="trailing" constant="21" id="pnx-F6-rmr"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="addressLabel" destination="TCT-MR-cj2" id="JKR-OL-8e4"/>
-                                    <outlet property="nameLabel" destination="bHO-wS-PrU" id="15Y-hK-LAb"/>
+                                    <outlet property="addressLabel" destination="z83-XF-VKZ" id="g67-gA-9g8"/>
+                                    <outlet property="imageLabel" destination="ner-kl-JEz" id="TKd-YT-PqY"/>
+                                    <outlet property="nameLabel" destination="K3W-cq-w36" id="DUb-KD-Nql"/>
                                     <segue destination="tOC-7b-2xR" kind="show" identifier="BarDetails" id="xao-4Z-UVX"/>
                                 </connections>
                             </tableViewCell>
@@ -66,7 +76,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kac-se-l5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1276" y="462"/>
+            <point key="canvasLocation" x="1276" y="461.91904047976016"/>
         </scene>
         <!--Map-->
         <scene sceneID="Rcy-AO-kRh">

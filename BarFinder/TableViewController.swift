@@ -66,7 +66,7 @@ class TableViewController: UITableViewController  {
         
         cell.nameLabel.text = name
         cell.addressLabel.text = address
-        cell.imageView?.image = image
+        cell.imageLabel.image = image
         
         
         return cell
