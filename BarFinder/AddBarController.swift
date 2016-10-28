@@ -36,7 +36,7 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, UIImag
             ac.addAction(takePhoto)
             ac.addAction(useLibrary)
             ac.addAction(cancel)
- 
+            
             present(ac, animated: true, completion: nil)
         } else {
             imagePicker.sourceType = .photoLibrary
@@ -44,7 +44,7 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, UIImag
         }
         
         imagePicker.delegate = self
-
+        
     }
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
@@ -69,7 +69,7 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, UIImag
             barStore.allBars.append(newBar)
             barStore.uploadTo(bar: newBar)
             self.navigationController?.popViewController(animated: true)
-
+            
         } else {
             let title = "Oops!"
             let message = "Seems like you forgot to fill in all the required fields"
@@ -92,7 +92,7 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, UIImag
         
         dismiss(animated: true, completion: nil)
     }
-
+    
 }
 
 

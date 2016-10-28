@@ -18,7 +18,6 @@ class DetailViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     
     var bar : Bar! {
-        //Setting the title in the navigationbar
         didSet {
             navigationItem.title = bar.name
         }
@@ -27,10 +26,9 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        //AddressLabel showing the corresponding address
         addressLabel.text = bar?.address
         imageView.image = bar.image
-
+        
     }
     
 }

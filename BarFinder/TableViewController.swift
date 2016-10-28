@@ -27,15 +27,10 @@ class TableViewController: UITableViewController  {
                 self.tableView.reloadData()
             }
         }
-//        barStore.imageDownloadFrom { (result:[Bar]) in
-//            if result.count != 0 {
-//                self.barStore.allBars = result
-//            }
-//        }
+
 
         
 
-       // let color = UIColor.init(red: 0.1, green: 0.4, blue: 0.390, alpha: 0)
         let color : UIColor = #colorLiteral(red: 0.2901960784, green: 0.5647058824, blue: 0.8862745098, alpha: 1)
         let color2 : UIColor = #colorLiteral(red: 0.1298420429, green: 0.1298461258, blue: 0.1298439503, alpha: 1)
 
@@ -43,7 +38,6 @@ class TableViewController: UITableViewController  {
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
         tableView.rowHeight = 80
-        //tableView.backgroundColor = color2
         
         
         tabBarController?.tabBar.barTintColor = color
