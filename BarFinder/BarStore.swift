@@ -20,6 +20,9 @@ class BarStore {
     var ref: FIRDatabaseReference!
     var gsRef : FIRStorageReference!
     var currentBar : Bar?
+    var tableView : UITableView! = UITableView()
+    
+    
     
     
     func giveBarArray() -> [Bar] {
@@ -56,6 +59,7 @@ class BarStore {
                             } else {
                                 // Data for "images/island.jpg" is returned
                                 downloadImage = UIImage(data: data!)
+                                self.tableView.reloadData()
                                 print("Download: \(downloadRef)")
                                 
                                 let bar = Bar(name: barName, address: barAddress, imageName: barImageName)

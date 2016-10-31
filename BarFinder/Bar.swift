@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class Bar : NSObject {
     
@@ -14,11 +15,14 @@ class Bar : NSObject {
     var address : String
     var imageName : String
     var image : UIImage?
+    //let coordinate : CLLocationCoordinate2D
+    
 
     init(name: String, address: String, imageName: String) {
         self.name = name
         self.address = address
         self.imageName = imageName
+        //self.coordinate = coordinate
         
         super.init()
     }

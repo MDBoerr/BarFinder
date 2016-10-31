@@ -94,7 +94,6 @@ class TableViewController: UITableViewController  {
     }
     func refreshData() {
         self.tableView.reloadData()
-    
         
 //        self.tableView.refreshControl?.beginRefreshing()
 //        
