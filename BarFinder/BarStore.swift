@@ -14,15 +14,12 @@ import Firebase
 
 class BarStore {
     
-    static let sharedInstance = BarStore.self
+    static let sharedInstance = BarStore()
     
     var allBars : [Bar] = []
     var ref: FIRDatabaseReference!
     var gsRef : FIRStorageReference!
     var currentBar : Bar?
-    var tableView : UITableView! = UITableView()
-    
-    
     
     
     func giveBarArray() -> [Bar] {
@@ -34,8 +31,10 @@ class BarStore {
         let name = bar.name
         let address = bar.address
         let imageName = bar.imageName
+        let latitude = bar.latitude
+        let longitude = bar.longitude
         //  let image = bar.image
-        _ = ref.child("Bars").child(name).setValue(["Name" : name, "Address" : address, "ImageName": imageName])
+        _ = ref.child("Bars").child(name).setValue(["Name" : name, "Address" : address, "ImageName" : imageName, "Latitude" : latitude, "Longitude" : longitude])
         
     }
     func downloadFrom(completion: @escaping ([Bar]) -> ()) {
@@ -50,6 +49,8 @@ class BarStore {
                         let barName = barDict["Name"] as! String
                         let barAddress = barDict["Address"] as! String
                         let barImageName = barDict["ImageName"] as! String
+                        let barLatitude = barDict["Latitude"] as! Double
+                        let barLongitude = barDict["Longitude"] as! Double
                         let gsRef = FIRStorage.storage().reference(forURL: "gs://barfinder-fc3ee.appspot.com/Images/")
                         let downloadRef = gsRef.child(barImageName)
                         var downloadImage : UIImage!
@@ -59,16 +60,16 @@ class BarStore {
                             } else {
                                 // Data for "images/island.jpg" is returned
                                 downloadImage = UIImage(data: data!)
-                                self.tableView.reloadData()
                                 print("Download: \(downloadRef)")
                                 
-                                let bar = Bar(name: barName, address: barAddress, imageName: barImageName)
+                                let bar = Bar(name: barName, address: barAddress, imageName: barImageName, latitude: barLatitude, longitude: barLongitude)
                                 let barImage = downloadImage
                                 bar.image = barImage
                                 
                                 self.allBars.append(bar)
+                                completion(self.allBars)
+
                             }
-                            completion(self.allBars)
                     }}
                 }
             }

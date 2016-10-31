@@ -13,18 +13,26 @@ import MapKit
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     var mapView : MKMapView!
+    var bar : Bar!
+    var barStore = BarStore.sharedInstance
     var locationManager = CLLocationManager()
     var longlat: CLLocationCoordinate2D!
     var region: MKCoordinateRegion!
+    var userLocation: CLLocation!
     
-    
+    var barArray : [Bar] = []
+
     override func loadView() {
         mapView = MKMapView()
         view = mapView
         
+        print("Shared instance \(barStore)")
+        
+        //Segmented control
         let standardString = NSLocalizedString("Standard", comment: "Standard map view")
         let hybridString = NSLocalizedString("Hybrid", comment: "Hybrid map view")
         let satelliteString = NSLocalizedString("Satellite", comment: "Satellite map view")
+                
         
         let segmentedControl = UISegmentedControl(items: [standardString, hybridString, satelliteString])
         segmentedControl.backgroundColor = UIColor.white.withAlphaComponent(0.5)
@@ -44,6 +52,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         leadingConstraint.isActive = true
         trailingConstraint.isActive = true
         
+        //Location Button
         let locationButton = UIButton()
         locationButton.setImage(UIImage(named: "locIcon"), for: .normal)
         locationButton.alpha = 1
@@ -60,21 +69,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         locationButton.addTarget(self,  action:#selector(whatIsMyLocation), for: .touchDown)
         
-        let locationParents = CLLocationCoordinate2D(latitude: 52.3147612, longitude: 4.682027299999959)
-        //let locationBar = m
-        
-        let span = MKCoordinateSpanMake(0.05, 0.05)
-        
-        let regionParents = MKCoordinateRegion(center: locationParents, span: span)
-        mapView.setRegion(regionParents, animated: true)
-        
-        let annotationParents = MKPointAnnotation()
-        annotationParents.coordinate = locationParents
-        annotationParents.title = "Cafe Fonteyn"
-        annotationParents.subtitle = "Adresje 14"
-        mapView.addAnnotation(annotationParents)
-        
-
         
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -98,8 +92,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         mapView.showsUserLocation = true
+        dropPinForBar()
+        barArray = barStore.allBars
+        //barArray = barStore!.allBars
+        print("This is my array: \(barArray)")
         
     }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//    
+//    }
     
     func mapTypeChanged(segControl: UISegmentedControl) {
         switch segControl.selectedSegmentIndex {
@@ -109,4 +111,27 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         default: break
         }
     }
+    func dropPinForBar() {
+        print("The Value is: \(barStore.allBars[0].latitude), \(barStore.allBars[0].longitude)")
+        
+        for bar in barStore.allBars {
+            let locationParents = CLLocationCoordinate2D(latitude: bar.latitude, longitude: bar.longitude)
+            //let locationBar = m
+            
+            let span = MKCoordinateSpanMake(0.05, 0.05)
+            
+            let regionParents = MKCoordinateRegion(center: locationParents, span: span)
+            mapView.setRegion(regionParents, animated: true)
+            
+            let annotationParents = MKPointAnnotation()
+            annotationParents.coordinate = locationParents
+            annotationParents.title = bar.name
+            annotationParents.subtitle = bar.address
+            mapView.addAnnotation(annotationParents)
+        }
+        
+    }
+    
+    
+    
 }

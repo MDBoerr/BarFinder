@@ -7,10 +7,16 @@
 //
 
 import UIKit
-import MobileCoreServices
+import MapKit
 
-class AddBarController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class AddBarController: UIViewController, UINavigationControllerDelegate, CLLocationManagerDelegate, UIImagePickerControllerDelegate, MKMapViewDelegate {
     
+    var mapViewCont : MapViewController!
+    var locationManager : CLLocationManager = CLLocationManager()
+    var longlat : CLLocationCoordinate2D!
+    var latitudeUser : CLLocationDegrees!
+    var longitudeUser : CLLocationDegrees!
+    var coordinates1 : CLLocationCoordinate2D!
     @IBOutlet var nameField: UITextField!
     @IBOutlet var addressField: UITextField!
     @IBOutlet var imageView: UIImageView!
@@ -57,6 +63,8 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, UIImag
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
         
         navigationItem.title = "Add a new bar"
     }
@@ -66,8 +74,10 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, UIImag
             let myName : String = (nameField?.text)!
             let myAddress : String = (addressField?.text)!
             let myImageName = barStore.imageUploadTo(image: imageView.image!)
+            let myLatitude = latitudeUser
+            let myLongitude = longitudeUser
             print(myName, myAddress)
-            let newBar = Bar(name: myName, address: myAddress, imageName: myImageName)
+            let newBar = Bar(name: myName, address: myAddress, imageName: myImageName, latitude: myLatitude!, longitude: myLongitude!)
             barStore.allBars.append(newBar)
             barStore.uploadTo(bar: newBar)
             self.navigationController?.popViewController(animated: true)
@@ -95,6 +105,21 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, UIImag
         dismiss(animated: true, completion: nil)
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+       // let userLocation : CLLocation = locations[0] as CLLocation!
+        self.longlat = manager.location!.coordinate
+        locationManager.stopUpdatingLocation()
+        print("These are the coordinates uploaded to firebase \(self.longlat)")
+        coordinates1 = self.longlat
+        latitudeUser = self.longlat.latitude
+        longitudeUser = self.longlat.longitude
+        print(latitudeUser, longitudeUser)
+        
+    }
+   // func userLocationToFirebase() {
+//        locationManager.startUpdatingLocation()
+//        locationManager.stopUpdatingLocation()
+//    }
 }
 
 

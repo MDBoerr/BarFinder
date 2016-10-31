@@ -11,7 +11,8 @@ import Firebase
 
 class TableViewController: UITableViewController  {
     
-    let barStore: BarStore! = BarStore()
+    
+    let barStore = BarStore.sharedInstance
     var bar : Bar?
     var barArray : [Bar] = []
     
@@ -25,8 +26,10 @@ class TableViewController: UITableViewController  {
             if result.count != 0 {
                 self.barArray = result
                 self.tableView.reloadData()
+                
             }
         }
+      
 
         let color : UIColor = #colorLiteral(red: 0.2901960784, green: 0.5647058824, blue: 0.8862745098, alpha: 1)
         //let color2 : UIColor = #colorLiteral(red: 0.1298420429, green: 0.1298461258, blue: 0.1298439503, alpha: 1)
@@ -47,7 +50,7 @@ class TableViewController: UITableViewController  {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-                return barStore!.allBars.count
+                return barStore.allBars.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,7 +74,7 @@ class TableViewController: UITableViewController  {
         
         if segue.identifier == "BarDetails" {
             if let row = tableView.indexPathForSelectedRow?.row {
-                let item = barStore?.allBars[row]
+                let item = barStore.allBars[row]
                 
                 let detailViewController = segue.destination as! DetailViewController
                 detailViewController.bar = item
@@ -79,16 +82,18 @@ class TableViewController: UITableViewController  {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tableView.reloadData()
 
-        print(barStore.allBars.count)
-    }
     override func viewDidAppear(_ animated: Bool) {
+        
+        barStore.downloadFrom { (result: [Bar]) in
+            if result.count != 0 {
+                self.barArray = result
+                self.tableView.reloadData()
+                
+            }
+        }
         super.viewDidAppear(animated)
-        self.tableView.reloadData()
-        print(barStore.allBars.count)
+         print(barStore.allBars.count)
 
         
     }
