@@ -18,14 +18,9 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     var longlat: CLLocationCoordinate2D!
     var region: MKCoordinateRegion!
     
-    
-    
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
-    
-    var detailMapView: MKMapView!
-    
-
+    @IBOutlet var detailMapView: MKMapView!
     
     var bar : Bar! {
         didSet {
@@ -45,39 +40,39 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.longlat = manager.location!.coordinate
         
-        self.region = MKCoordinateRegion(center: self.longlat, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        self.region = MKCoordinateRegion(center: self.longlat, span: MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001))
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        detailMapView = MKMapView()
+//        detailMapView = MKMapView()
         locationManager.delegate = self
+        detailMapView.delegate = self
         
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         detailMapView.showsUserLocation = true
         
-//        dropPinForSelectedBar()
+        dropPinForSelectedBar()
 
     }
-//    func dropPinForSelectedBar() {
-//        
-//        for bar in barStore.allBars {
-//            let locationBar = CLLocationCoordinate2D(latitude: bar.latitude, longitude: bar.longitude)
-//            //let locationBar = m
-//            
-//            let span = MKCoordinateSpanMake(0.05, 0.05)
-//            
-//            let regionBar = MKCoordinateRegion(center: locationBar, span: span)
-//            detailMapView.setRegion(regionBar, animated: true)
-//            
-//            let annotationBar = MKPointAnnotation()
-//            annotationBar.coordinate = locationBar
-//            annotationBar.title = bar.name
-//            annotationBar.subtitle = bar.address
-//            detailMapView.addAnnotation(annotationBar)
-//        }
-//    }
+    func dropPinForSelectedBar() {
+        
+            let locationBar = CLLocationCoordinate2D(latitude: bar.latitude, longitude: bar.longitude)
+            //let locationBar = m
+        
+            let span = MKCoordinateSpanMake(0.05, 0.05)
+            
+            let regionBar = MKCoordinateRegion(center: locationBar, span: span)
+            detailMapView.setRegion(regionBar, animated: true)
+        
+            let annotationBar = MKPointAnnotation()
+            annotationBar.coordinate = locationBar
+            annotationBar.title = bar.name
+            annotationBar.subtitle = bar.address
+            detailMapView.addAnnotation(annotationBar)
+        }
+    }
 
 //
-}
+

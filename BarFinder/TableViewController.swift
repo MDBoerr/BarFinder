@@ -87,16 +87,18 @@ class TableViewController: UITableViewController  {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.tableView.reloadData()
         print(barStore.allBars.count)
     }
     
     func refreshData() {
+        
         if #available(iOS 10.0, *) {
             self.tableView.refreshControl?.beginRefreshing()
             self.tableView.reloadData()
             self.tableView.refreshControl?.endRefreshing()
         } else {
-            // Fallback on earlier versions
+             //Fallback on earlier versions
         }
         
     }

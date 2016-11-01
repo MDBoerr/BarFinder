@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2716E8021DBA01A10085AD55 /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716E8011DBA01A10085AD55 /* BarCell.swift */; };
-		271A54D21DB90D30003B9AA2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 271A54D11DB90D30003B9AA2 /* GoogleService-Info.plist */; };
 		275C3AE61DB8F08E00B0355A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 275C3AE51DB8F08E00B0355A /* Assets.xcassets */; };
+		27858E871DC8ED9700822D1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27858E861DC8ED9700822D1E /* GoogleService-Info.plist */; };
 		27E59BE01DB7AB3A007CBF00 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E59BDF1DB7AB3A007CBF00 /* TableViewController.swift */; };
 		27E59BE21DB7ABB9007CBF00 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E59BE11DB7ABB9007CBF00 /* MapViewController.swift */; };
 		27E59BE41DB7AC91007CBF00 /* AddBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E59BE31DB7AC91007CBF00 /* AddBarController.swift */; };
@@ -26,8 +26,8 @@
 
 /* Begin PBXFileReference section */
 		2716E8011DBA01A10085AD55 /* BarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarCell.swift; sourceTree = "<group>"; };
-		271A54D11DB90D30003B9AA2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		275C3AE51DB8F08E00B0355A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		27858E861DC8ED9700822D1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		27E59BDF1DB7AB3A007CBF00 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		27E59BE11DB7ABB9007CBF00 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../MapViewController.swift; sourceTree = "<group>"; };
 		27E59BE31DB7AC91007CBF00 /* AddBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBarController.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 				4E86368B1DB79C090019691C /* LaunchScreen.storyboard */,
 				275C3AE51DB8F08E00B0355A /* Assets.xcassets */,
 				4E86368E1DB79C090019691C /* Info.plist */,
-				271A54D11DB90D30003B9AA2 /* GoogleService-Info.plist */,
+				27858E861DC8ED9700822D1E /* GoogleService-Info.plist */,
 			);
 			path = BarFinder;
 			sourceTree = "<group>";
@@ -180,9 +180,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E86368D1DB79C090019691C /* LaunchScreen.storyboard in Resources */,
-				271A54D21DB90D30003B9AA2 /* GoogleService-Info.plist in Resources */,
 				275C3AE61DB8F08E00B0355A /* Assets.xcassets in Resources */,
 				4E8636881DB79C090019691C /* Main.storyboard in Resources */,
+				27858E871DC8ED9700822D1E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -111,8 +111,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             let span = MKCoordinateSpanMake(0.05, 0.05)
             
-            let regionBar = MKCoordinateRegion(center: locationBar, span: span)
-            mapView.setRegion(regionBar, animated: true)
+//            let regionBar = MKCoordinateRegion(center: locationBar, span: span)
+//            mapView.setRegion(regionBar, animated: true)
             
             let annotationBar = MKPointAnnotation()
             annotationBar.coordinate = locationBar
