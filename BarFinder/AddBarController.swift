@@ -67,9 +67,10 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
         locationManager.startUpdatingLocation()
         
         navigationItem.title = "Add a new bar"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(createNewBar(_:)))
     }
     
-    @IBAction func createNewBar(_ sender: AnyObject) {
+    func createNewBar(_ sender: AnyObject) {
         if (nameField.text != "") && addressField.text != "" && imageView.image != nil {
             let myName : String = (nameField?.text)!
             let myAddress : String = (addressField?.text)!

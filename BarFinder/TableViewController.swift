@@ -90,12 +90,19 @@ class TableViewController: UITableViewController  {
     }
     
     func refreshData() {
-        self.tableView.reloadData()
+        if #available(iOS 10.0, *) {
+            self.tableView.refreshControl?.beginRefreshing()
+        } else {
+            // Fallback on earlier versions
+        }
         
-        //        self.tableView.refreshControl?.beginRefreshing()
-        //
-        //
-        //        self.tableView.refreshControl?.endRefreshing()
+        self.tableView.reloadData()
+
+        if #available(iOS 10.0, *) {
+            self.tableView.refreshControl?.endRefreshing()
+        } else {
+            // Fallback on earlier versions
+        }
         
     }
     
