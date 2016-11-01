@@ -91,7 +91,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView.showsUserLocation = true
         dropPinForBar()
         barArray = barStore.allBars
-        //barArray = barStore!.allBars
         print("This is my array: \(barArray)")
         
     }
@@ -108,7 +107,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         for bar in barStore.allBars {
             let locationParents = CLLocationCoordinate2D(latitude: bar.latitude, longitude: bar.longitude)
-            //let locationBar = m
             
             let span = MKCoordinateSpanMake(0.05, 0.05)
             

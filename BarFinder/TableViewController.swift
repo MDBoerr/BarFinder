@@ -79,6 +79,7 @@ class TableViewController: UITableViewController  {
                 
                 let detailViewController = segue.destination as! DetailViewController
                 detailViewController.bar = item
+                detailViewController.hidesBottomBarWhenPushed = true
             }
         }
     }
@@ -92,13 +93,7 @@ class TableViewController: UITableViewController  {
     func refreshData() {
         if #available(iOS 10.0, *) {
             self.tableView.refreshControl?.beginRefreshing()
-        } else {
-            // Fallback on earlier versions
-        }
-        
-        self.tableView.reloadData()
-
-        if #available(iOS 10.0, *) {
+            self.tableView.reloadData()
             self.tableView.refreshControl?.endRefreshing()
         } else {
             // Fallback on earlier versions

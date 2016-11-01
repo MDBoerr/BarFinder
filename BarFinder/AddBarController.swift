@@ -44,6 +44,8 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
             ac.addAction(cancel)
             
             present(ac, animated: true, completion: nil)
+            
+            
         } else {
             imagePicker.sourceType = .photoLibrary
             present(imagePicker, animated: true, completion: nil)
@@ -52,6 +54,7 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
         imagePicker.delegate = self
         
     }
+    @IBOutlet var ButtonIcon: UIButton!
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
@@ -99,6 +102,7 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         imageView.image = image
+        ButtonIcon.alpha = 0.05
         let newImage = imageView.image
         barStore.imageUploadTo(image: newImage!)
         dismiss(animated: true, completion: nil)
