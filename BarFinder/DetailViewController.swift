@@ -17,8 +17,8 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     var locationManager = CLLocationManager()
     var longlat: CLLocationCoordinate2D!
     var region: MKCoordinateRegion!
-
-
+    
+    
     
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
@@ -38,14 +38,14 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
     }
     func detailMap() {
-       // detailMapView.
+        // detailMapView.
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.longlat = manager.location!.coordinate
         
         self.region = MKCoordinateRegion(center: self.longlat, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self

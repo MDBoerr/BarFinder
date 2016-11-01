@@ -57,22 +57,14 @@ class BarStore {
                         
                         
                         let bar = Bar(name: barName, address: barAddress, imageName: barImageName, latitude: barLatitude, longitude: barLongitude)
-                        //                      bar.getItDownloadIt()
-                        
-                        //                                let barImage = downloadImage
-                        //                                bar.image = barImage
-                        
                         self.allBars.append(bar)
                         
                         let notification = Notification.Name("Data arrived")
                         NotificationCenter.default.post(name: notification, object: nil)
-                        
                     }
-                    
                 }
                 completion(self.allBars)
             }
-
         })}
     
     

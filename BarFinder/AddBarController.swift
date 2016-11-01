@@ -100,13 +100,10 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
         imageView.image = image
         let newImage = imageView.image
         barStore.imageUploadTo(image: newImage!)
-        
-        
         dismiss(animated: true, completion: nil)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-       // let userLocation : CLLocation = locations[0] as CLLocation!
         self.longlat = manager.location!.coordinate
         locationManager.stopUpdatingLocation()
         print("These are the coordinates uploaded to firebase \(self.longlat)")
@@ -116,10 +113,6 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
         print(latitudeUser, longitudeUser)
         
     }
-   // func userLocationToFirebase() {
-//        locationManager.startUpdatingLocation()
-//        locationManager.stopUpdatingLocation()
-//    }
 }
 
 

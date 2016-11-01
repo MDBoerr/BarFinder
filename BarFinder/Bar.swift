@@ -19,17 +19,15 @@ class Bar : NSObject {
     var image : UIImage?
     var longitude : Double
     var latitude : Double
-    //let coordinate : CLLocationCoordinate2D
     var completionBlock : ((_ image: UIImage?) -> Void)?
     
-
+    
     init(name: String, address: String, imageName: String, latitude: Double, longitude: Double) {
         self.name = name
         self.address = address
         self.imageName = imageName
         self.latitude = latitude
         self.longitude = longitude
-        //self.coordinate = coordinate
         self.image = nil
         super.init()
         DispatchQueue.global().async {
@@ -37,14 +35,10 @@ class Bar : NSObject {
                 self.getItDownloadIt(url: url)
             }
         }
-       // super.init()
-        
-
     }
     
     
-    func getItDownloadIt (url: NSURL) {//(completion: @escaping (UIImage) -> ()){
-        var barImage = UIImage()
+    func getItDownloadIt (url: NSURL) {
         let gsRef = FIRStorage.storage().reference(forURL: "gs://barfinder-fc3ee.appspot.com/Images/")
         let downloadRef = gsRef.child(self.imageName)
         var downloadImage : UIImage!
@@ -59,8 +53,6 @@ class Bar : NSObject {
                     print("Loading image \(self.name)")
                     block(downloadImage)
                 }
-                // Data for "images/island.jpg" is returned
-                //  completion(downloadImage)
             }
         }
         

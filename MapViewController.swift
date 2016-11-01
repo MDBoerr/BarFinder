@@ -21,7 +21,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var userLocation: CLLocation!
     
     var barArray : [Bar] = []
-
+    
     override func loadView() {
         mapView = MKMapView()
         view = mapView
@@ -32,7 +32,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let standardString = NSLocalizedString("Standard", comment: "Standard map view")
         let hybridString = NSLocalizedString("Hybrid", comment: "Hybrid map view")
         let satelliteString = NSLocalizedString("Satellite", comment: "Satellite map view")
-                
+        
         
         let segmentedControl = UISegmentedControl(items: [standardString, hybridString, satelliteString])
         segmentedControl.backgroundColor = UIColor.white.withAlphaComponent(0.5)
@@ -68,27 +68,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         trailingConstraintButton.isActive = true
         
         locationButton.addTarget(self,  action:#selector(whatIsMyLocation), for: .touchDown)
-        
-        
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.longlat = manager.location!.coordinate
-
+        
         self.region = MKCoordinateRegion(center: self.longlat, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
     }
-
+    
     func whatIsMyLocation() {
         if longlat != nil {
             mapView.setCenter(longlat, animated: true)
             mapView.setRegion(region, animated: true)
         }
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
-    
+        
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         mapView.showsUserLocation = true
@@ -98,11 +95,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         print("This is my array: \(barArray)")
         
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//    
-//    }
-    
     func mapTypeChanged(segControl: UISegmentedControl) {
         switch segControl.selectedSegmentIndex {
         case 0: mapView.mapType = .standard
@@ -129,9 +121,5 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             annotationParents.subtitle = bar.address
             mapView.addAnnotation(annotationParents)
         }
-        
     }
-    
-    
-    
 }
