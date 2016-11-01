@@ -104,22 +104,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
     func dropPinForBar() {
-        print("The Value is: \(barStore.allBars[0].latitude), \(barStore.allBars[0].longitude)")
         
         for bar in barStore.allBars {
-            let locationParents = CLLocationCoordinate2D(latitude: bar.latitude, longitude: bar.longitude)
+            let locationBar = CLLocationCoordinate2D(latitude: bar.latitude, longitude: bar.longitude)
             //let locationBar = m
             
             let span = MKCoordinateSpanMake(0.05, 0.05)
             
-            let regionParents = MKCoordinateRegion(center: locationParents, span: span)
-            mapView.setRegion(regionParents, animated: true)
+            let regionBar = MKCoordinateRegion(center: locationBar, span: span)
+            mapView.setRegion(regionBar, animated: true)
             
-            let annotationParents = MKPointAnnotation()
-            annotationParents.coordinate = locationParents
-            annotationParents.title = bar.name
-            annotationParents.subtitle = bar.address
-            mapView.addAnnotation(annotationParents)
+            let annotationBar = MKPointAnnotation()
+            annotationBar.coordinate = locationBar
+            annotationBar.title = bar.name
+            annotationBar.subtitle = bar.address
+            mapView.addAnnotation(annotationBar)
         }
     }
 }

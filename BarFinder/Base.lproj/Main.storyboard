@@ -253,7 +253,6 @@
                     <connections>
                         <outlet property="ImageView" destination="Sg9-sZ-wzo" id="IGV-BW-UUW"/>
                         <outlet property="addressLabel" destination="WXd-Et-pwS" id="PZT-8C-ZkR"/>
-                        <outlet property="detailMapView" destination="5Hz-HO-gFQ" id="9AV-Su-5Jc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZ0-36-USo" userLabel="First Responder" sceneMemberID="firstResponder"/>

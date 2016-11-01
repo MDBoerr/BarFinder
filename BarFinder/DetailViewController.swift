@@ -23,7 +23,9 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     
-    @IBOutlet var detailMapView: MKMapView!
+    var detailMapView: MKMapView!
+    
+
     
     var bar : Bar! {
         didSet {
@@ -48,11 +50,34 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        detailMapView = MKMapView()
         locationManager.delegate = self
         
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         detailMapView.showsUserLocation = true
         
+//        dropPinForSelectedBar()
+
     }
+//    func dropPinForSelectedBar() {
+//        
+//        for bar in barStore.allBars {
+//            let locationBar = CLLocationCoordinate2D(latitude: bar.latitude, longitude: bar.longitude)
+//            //let locationBar = m
+//            
+//            let span = MKCoordinateSpanMake(0.05, 0.05)
+//            
+//            let regionBar = MKCoordinateRegion(center: locationBar, span: span)
+//            detailMapView.setRegion(regionBar, animated: true)
+//            
+//            let annotationBar = MKPointAnnotation()
+//            annotationBar.coordinate = locationBar
+//            annotationBar.title = bar.name
+//            annotationBar.subtitle = bar.address
+//            detailMapView.addAnnotation(annotationBar)
+//        }
+//    }
+
+//
 }
