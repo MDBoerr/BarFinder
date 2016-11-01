@@ -44,6 +44,8 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
             ac.addAction(cancel)
             
             present(ac, animated: true, completion: nil)
+            
+            
         } else {
             imagePicker.sourceType = .photoLibrary
             present(imagePicker, animated: true, completion: nil)
@@ -52,6 +54,7 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
         imagePicker.delegate = self
         
     }
+    @IBOutlet var ButtonIcon: UIButton!
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
@@ -67,9 +70,10 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
         locationManager.startUpdatingLocation()
         
         navigationItem.title = "Add a new bar"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(createNewBar(_:)))
     }
     
-    @IBAction func createNewBar(_ sender: AnyObject) {
+    func createNewBar(_ sender: AnyObject) {
         if (nameField.text != "") && addressField.text != "" && imageView.image != nil {
             let myName : String = (nameField?.text)!
             let myAddress : String = (addressField?.text)!
@@ -98,6 +102,7 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         imageView.image = image
+        ButtonIcon.alpha = 0.05
         let newImage = imageView.image
         barStore.imageUploadTo(image: newImage!)
         dismiss(animated: true, completion: nil)
