@@ -8,6 +8,8 @@
 
 import UIKit
 import MapKit
+import Firebase
+import FirebaseStorage
 
 class Bar : NSObject {
     
@@ -18,6 +20,7 @@ class Bar : NSObject {
     var longitude : Double
     var latitude : Double
     //let coordinate : CLLocationCoordinate2D
+    var completionBlock : ((_ image: UIImage?) -> Void)?
     
 
     init(name: String, address: String, imageName: String, latitude: Double, longitude: Double) {
@@ -27,11 +30,46 @@ class Bar : NSObject {
         self.latitude = latitude
         self.longitude = longitude
         //self.coordinate = coordinate
-        
+        self.image = nil
         super.init()
-    }
-    func getItDownloadIt(){
+        DispatchQueue.global().async {
+            if let url=NSURL(string: imageName) {
+                self.getItDownloadIt(url: url)
+            }
+        }
+       // super.init()
         
+
     }
     
+    
+    func getItDownloadIt (url: NSURL) {//(completion: @escaping (UIImage) -> ()){
+        var barImage = UIImage()
+        let gsRef = FIRStorage.storage().reference(forURL: "gs://barfinder-fc3ee.appspot.com/Images/")
+        let downloadRef = gsRef.child(self.imageName)
+        var downloadImage : UIImage!
+        downloadRef.data(withMaxSize: 4 * 1024 * 1024) { (data, error) -> Void in
+            if (error != nil) {
+                // Uh-oh, an error occurred!
+            } else {
+                downloadImage = UIImage(data: data!)
+                print("Download: \(downloadRef)")
+                self.image = downloadImage
+                if let block = self.completionBlock {
+                    print("Loading image \(self.name)")
+                    block(downloadImage)
+                }
+                // Data for "images/island.jpg" is returned
+                //  completion(downloadImage)
+            }
+        }
+        
+    }
+    func loadImageOn( completion:@escaping (_ image: UIImage?) -> Void) {
+        self.completionBlock = completion
+        if self.image != nil {
+            completion(self.image)
+        }
+        
+    }
 }

@@ -25,6 +25,7 @@ class BarStore {
     func giveBarArray() -> [Bar] {
         return allBars
     }
+    
     func uploadTo(bar: Bar)  {
         ref = FIRDatabase.database().reference()
         
@@ -37,6 +38,7 @@ class BarStore {
         _ = ref.child("Bars").child(name).setValue(["Name" : name, "Address" : address, "ImageName" : imageName, "Latitude" : latitude, "Longitude" : longitude])
         
     }
+    
     func downloadFrom(completion: @escaping ([Bar]) -> ()) {
         ref = FIRDatabase.database().reference()
         
@@ -52,28 +54,27 @@ class BarStore {
                         let barLatitude = barDict["Latitude"] as! Double
                         let barLongitude = barDict["Longitude"] as! Double
                         let gsRef = FIRStorage.storage().reference(forURL: "gs://barfinder-fc3ee.appspot.com/Images/")
-                        let downloadRef = gsRef.child(barImageName)
-                        var downloadImage : UIImage!
-                        downloadRef.data(withMaxSize: 4 * 1024 * 1024) { (data, error) -> Void in
-                            if (error != nil) {
-                                // Uh-oh, an error occurred!
-                            } else {
-                                // Data for "images/island.jpg" is returned
-                                downloadImage = UIImage(data: data!)
-                                print("Download: \(downloadRef)")
-                                
-                                let bar = Bar(name: barName, address: barAddress, imageName: barImageName, latitude: barLatitude, longitude: barLongitude)
-                                let barImage = downloadImage
-                                bar.image = barImage
-                                
-                                self.allBars.append(bar)
-                                completion(self.allBars)
-
-                            }
-                    }}
+                        
+                        
+                        let bar = Bar(name: barName, address: barAddress, imageName: barImageName, latitude: barLatitude, longitude: barLongitude)
+                        //                      bar.getItDownloadIt()
+                        
+                        //                                let barImage = downloadImage
+                        //                                bar.image = barImage
+                        
+                        self.allBars.append(bar)
+                        
+                        let notification = Notification.Name("Data arrived")
+                        NotificationCenter.default.post(name: notification, object: nil)
+                        
+                    }
+                    
                 }
+                completion(self.allBars)
             }
+
         })}
+    
     
     func imageUploadTo(image: UIImage) -> String {
         let gsRef = FIRStorage.storage().reference(forURL: "gs://barfinder-fc3ee.appspot.com/Images/")
@@ -90,4 +91,4 @@ class BarStore {
         }
         return imageName
     }
-   }
+}

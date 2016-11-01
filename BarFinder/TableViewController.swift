@@ -29,7 +29,7 @@ class TableViewController: UITableViewController  {
                 
             }
         }
-      
+
 
         let color : UIColor = #colorLiteral(red: 0.2901960784, green: 0.5647058824, blue: 0.8862745098, alpha: 1)
         //let color2 : UIColor = #colorLiteral(red: 0.1298420429, green: 0.1298461258, blue: 0.1298439503, alpha: 1)
@@ -59,11 +59,23 @@ class TableViewController: UITableViewController  {
         let currentBar = barStore.allBars[indexPath.row]
         let name = currentBar.name
         let address = currentBar.address
-        let image = currentBar.image
-        
+    //   let image = currentBar.getItDownloadIt
+//        currentBar.getItDownloadIt { (image) in
+//            if image != nil {
+//                cell.imageLabel.image = image
+//            }
+//        }
+//        
         cell.nameLabel.text = name
         cell.addressLabel.text = address
-        cell.imageLabel.image = image
+        cell.imageLabel.image = currentBar.image
+        DispatchQueue.global().async {
+            currentBar.loadImageOn(completion: { (image) in
+                DispatchQueue.main.async {
+                    cell.imageLabel.image = currentBar.image
+                }
+            })
+        }
         
         
         
@@ -84,14 +96,14 @@ class TableViewController: UITableViewController  {
     
 
     override func viewDidAppear(_ animated: Bool) {
-        
-        barStore.downloadFrom { (result: [Bar]) in
-            if result.count != 0 {
-                self.barArray = result
-                self.tableView.reloadData()
-                
-            }
-        }
+//        
+//        barStore.downloadFrom { (result: [Bar]) in
+//            if result.count != 0 {
+//                self.barArray = result
+//                self.tableView.reloadData()
+//                
+//            }
+//        }
         super.viewDidAppear(animated)
          print(barStore.allBars.count)
 
