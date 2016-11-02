@@ -57,6 +57,7 @@ class Bar : NSObject {
         }
         
     }
+    
     func loadImageOn( completion:@escaping (_ image: UIImage?) -> Void) {
         self.completionBlock = completion
         if self.image != nil {

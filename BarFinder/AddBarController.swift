@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class AddBarController: UIViewController, UINavigationControllerDelegate, CLLocationManagerDelegate, UIImagePickerControllerDelegate, MKMapViewDelegate {
+class AddBarController: UIViewController, UINavigationControllerDelegate, CLLocationManagerDelegate, UIImagePickerControllerDelegate, MKMapViewDelegate, UITextFieldDelegate {
     
     var mapViewCont : MapViewController!
     var locationManager : CLLocationManager = CLLocationManager()
@@ -20,12 +20,13 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
     @IBOutlet var nameField: UITextField!
     @IBOutlet var addressField: UITextField!
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var SaveButton: UIBarButtonItem!
     @IBAction func takePicture(_ sender: UIButton) {
         
         let imagePicker = UIImagePickerController()
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let title = "Would you like to take a picture or choose one from PhotoLibrary"
+            let title = "Would you like to take a picture or choose one from the PhotoLibrary?"
             let ac = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
             ac.popoverPresentationController?.sourceView = self.view
             let takePhoto = UIAlertAction(title: "Camera", style: .default) { (alert: UIAlertAction!) in
@@ -54,6 +55,7 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
         imagePicker.delegate = self
         
     }
+   
     @IBOutlet var ButtonIcon: UIButton!
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
@@ -68,33 +70,37 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
         super.viewDidLoad()
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
+        nameField.delegate = self
+        addressField.delegate = self
         
         navigationItem.title = "Add a new bar"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(createNewBar(_:)))
+        SaveButton.isEnabled = false
     }
     
-    func createNewBar(_ sender: AnyObject) {
-        if (nameField.text != "") && addressField.text != "" && imageView.image != nil {
-            let myName : String = (nameField?.text)!
-            let myAddress : String = (addressField?.text)!
-            let myImageName = barStore.imageUploadTo(image: imageView.image!)
-            let myLatitude = latitudeUser
-            let myLongitude = longitudeUser
-            print(myName, myAddress)
-            let newBar = Bar(name: myName, address: myAddress, imageName: myImageName, latitude: myLatitude!, longitude: myLongitude!)
-            barStore.allBars.append(newBar)
-            barStore.uploadTo(bar: newBar)
-            self.navigationController?.popViewController(animated: true)
-            
-        } else {
-            let title = "Oops!"
-            let message = "Seems like you forgot to fill in all the required fields"
-            let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let gotTheMessage = UIAlertAction(title: "Try again", style: .default, handler: nil)
-            ac.addAction(gotTheMessage)
-            
-            present(ac, animated: true, completion: nil)
+    @IBAction func saveButtonEnabled() {
+            createNewBar(self)
         }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if (nameField.text != ""), addressField.text != "", imageView.image != nil {
+            SaveButton.isEnabled = true
+        } else {
+            SaveButton.isEnabled = false
+        }
+    }
+
+    
+    func createNewBar(_ sender: AnyObject) {
+        let myName : String = (nameField?.text)!
+        let myAddress : String = (addressField?.text)!
+        let myImageName = barStore.imageUploadTo(image: imageView.image!)
+        let myLatitude = latitudeUser
+        let myLongitude = longitudeUser
+        print(myName, myAddress)
+        let newBar = Bar(name: myName, address: myAddress, imageName: myImageName, latitude: myLatitude!, longitude: myLongitude!)
+        barStore.allBars.append(newBar)
+        barStore.uploadTo(bar: newBar)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

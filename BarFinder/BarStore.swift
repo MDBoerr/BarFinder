@@ -44,7 +44,7 @@ class BarStore {
         
         ref.child("Bars").observe(.value, with: { (snapshot) in
             self.allBars = []
-            print(snapshot.value)
+            print(snapshot.value!)
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshots {
                     if let barDict = snap.value as? Dictionary<String, Any> {
@@ -71,7 +71,7 @@ class BarStore {
     func imageUploadTo(image: UIImage) -> String {
         let gsRef = FIRStorage.storage().reference(forURL: "gs://barfinder2-a4ffa.appspot.com/Images/")
         
-        let imageData = UIImageJPEGRepresentation(image, 0.8)
+        let imageData = UIImageJPEGRepresentation(image, 0.01)
         let imageName = "\(Date().timeIntervalSince1970).jpeg"
         let metaData = FIRStorageMetadata()
         metaData.contentType = "image/jpeg"
