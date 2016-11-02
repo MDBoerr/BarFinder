@@ -34,8 +34,9 @@ class BarStore {
         let imageName = bar.imageName
         let latitude = bar.latitude
         let longitude = bar.longitude
+        let rating = bar.rating
         //  let image = bar.image
-        _ = ref.child("Bars").child(name).setValue(["Name" : name, "Address" : address, "ImageName" : imageName, "Latitude" : latitude, "Longitude" : longitude])
+        _ = ref.child("Bars").child(name).setValue(["Name" : name, "Address" : address, "ImageName" : imageName, "Latitude" : latitude, "Longitude" : longitude, "Rating" : rating])
         
     }
     
@@ -53,10 +54,11 @@ class BarStore {
                         let barImageName = barDict["ImageName"] as! String
                         let barLatitude = barDict["Latitude"] as! Double
                         let barLongitude = barDict["Longitude"] as! Double
+                        let barRating = barDict["Rating"] as! String
                        // let gsRef = FIRStorage.storage().reference(forURL: "gs://barfinder2-a4ffa.appspot.com/Images/")
                         
                         
-                        let bar = Bar(name: barName, address: barAddress, imageName: barImageName, latitude: barLatitude, longitude: barLongitude)
+                        let bar = Bar(name: barName, address: barAddress, imageName: barImageName, latitude: barLatitude, longitude: barLongitude, rating: barRating)
                         self.allBars.append(bar)
                         
                         let notification = Notification.Name("Data arrived")

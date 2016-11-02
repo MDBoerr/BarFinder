@@ -21,6 +21,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var detailMapView: MKMapView!
+    @IBOutlet var ratingLabel: UILabel!
     
     var bar : Bar! {
         didSet {
@@ -32,6 +33,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         super.viewWillAppear(animated)
         addressLabel.text = bar?.address
         imageView.image = bar.image
+        ratingLabel.text = "Rating: \(bar!.rating)"
         
     }
     func detailMap() {
@@ -59,7 +61,6 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     func dropPinForSelectedBar() {
         
             let locationBar = CLLocationCoordinate2D(latitude: bar.latitude, longitude: bar.longitude)
-            //let locationBar = m
         
             let span = MKCoordinateSpanMake(0.05, 0.05)
             

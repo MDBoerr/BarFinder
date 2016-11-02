@@ -20,15 +20,17 @@ class Bar : NSObject {
     var longitude : Double
     var latitude : Double
     var completionBlock : ((_ image: UIImage?) -> Void)?
+    var rating : String
     
     
-    init(name: String, address: String, imageName: String, latitude: Double, longitude: Double) {
+    init(name: String, address: String, imageName: String, latitude: Double, longitude: Double, rating: String) {
         self.name = name
         self.address = address
         self.imageName = imageName
         self.latitude = latitude
         self.longitude = longitude
         self.image = nil
+        self.rating = rating
         super.init()
         DispatchQueue.global().async {
             if let url=NSURL(string: imageName) {

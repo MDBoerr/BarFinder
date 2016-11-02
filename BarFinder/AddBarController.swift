@@ -19,6 +19,7 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
     var coordinates1 : CLLocationCoordinate2D!
     @IBOutlet var nameField: UITextField!
     @IBOutlet var addressField: UITextField!
+    @IBOutlet var ratingField: UITextField!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var SaveButton: UIBarButtonItem!
     @IBAction func takePicture(_ sender: UIButton) {
@@ -82,7 +83,7 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
         }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if (nameField.text != ""), addressField.text != "", imageView.image != nil {
+        if (nameField.text != ""), addressField.text != "", imageView.image != nil && ratingField.text != "" {
             SaveButton.isEnabled = true
         } else {
             SaveButton.isEnabled = false
@@ -93,11 +94,12 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
     func createNewBar(_ sender: AnyObject) {
         let myName : String = (nameField?.text)!
         let myAddress : String = (addressField?.text)!
+        let myRating : String = (ratingField.text)!
         let myImageName = barStore.imageUploadTo(image: imageView.image!)
         let myLatitude = latitudeUser
         let myLongitude = longitudeUser
         print(myName, myAddress)
-        let newBar = Bar(name: myName, address: myAddress, imageName: myImageName, latitude: myLatitude!, longitude: myLongitude!)
+        let newBar = Bar(name: myName, address: myAddress, imageName: myImageName, latitude: myLatitude!, longitude: myLongitude!, rating: myRating)
         barStore.allBars.append(newBar)
         barStore.uploadTo(bar: newBar)
         self.navigationController?.popViewController(animated: true)
