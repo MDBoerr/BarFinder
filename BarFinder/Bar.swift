@@ -42,7 +42,7 @@ class Bar : NSObject {
         let gsRef = FIRStorage.storage().reference(forURL: "gs://barfinder2-a4ffa.appspot.com/Images/")
         let downloadRef = gsRef.child(self.imageName)
         var downloadImage : UIImage!
-        downloadRef.data(withMaxSize: 4 * 1024 * 1024) { (data, error) -> Void in
+        downloadRef.data(withMaxSize: 1 * 1024 * 1024) { (data, error) -> Void in
             if (error != nil) {
                 // Uh-oh, an error occurred!
             } else {
