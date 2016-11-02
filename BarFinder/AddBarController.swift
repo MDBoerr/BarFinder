@@ -73,6 +73,7 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
         locationManager.startUpdatingLocation()
         nameField.delegate = self
         addressField.delegate = self
+        ratingField.delegate = self
         
         navigationItem.title = "Add a new bar"
         SaveButton.isEnabled = false
@@ -87,6 +88,15 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
             SaveButton.isEnabled = true
         } else {
             SaveButton.isEnabled = false
+        }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == ratingField {
+            let wrongCharacter = CharacterSet(charactersIn: "0123456789.,").inverted
+            return string.rangeOfCharacter(from: wrongCharacter, options: [], range: string.startIndex ..< string.endIndex) == nil
+        } else {
+            return true
         }
     }
 
