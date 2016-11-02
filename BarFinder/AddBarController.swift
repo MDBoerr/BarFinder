@@ -99,7 +99,11 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
             return true
         }
     }
-
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     func createNewBar(_ sender: AnyObject) {
         let myName : String = (nameField?.text)!
