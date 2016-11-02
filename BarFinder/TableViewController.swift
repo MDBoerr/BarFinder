@@ -96,6 +96,14 @@ class TableViewController: UITableViewController  {
         if #available(iOS 10.0, *) {
             self.tableView.refreshControl?.beginRefreshing()
             self.tableView.reloadData()
+            barStore.downloadFrom { (result: [Bar]) in
+                if result.count != 0 {
+                    self.barArray = result
+                    self.tableView.reloadData()
+                    
+                }
+            }
+
             self.tableView.refreshControl?.endRefreshing()
         } else {
              //Fallback on earlier versions

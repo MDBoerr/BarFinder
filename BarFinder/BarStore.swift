@@ -53,7 +53,7 @@ class BarStore {
                         let barImageName = barDict["ImageName"] as! String
                         let barLatitude = barDict["Latitude"] as! Double
                         let barLongitude = barDict["Longitude"] as! Double
-                        let gsRef = FIRStorage.storage().reference(forURL: "gs://barfinder2-a4ffa.appspot.com/Images/")
+                       // let gsRef = FIRStorage.storage().reference(forURL: "gs://barfinder2-a4ffa.appspot.com/Images/")
                         
                         
                         let bar = Bar(name: barName, address: barAddress, imageName: barImageName, latitude: barLatitude, longitude: barLongitude)
@@ -71,7 +71,7 @@ class BarStore {
     func imageUploadTo(image: UIImage) -> String {
         let gsRef = FIRStorage.storage().reference(forURL: "gs://barfinder2-a4ffa.appspot.com/Images/")
         
-        let imageData = UIImageJPEGRepresentation(image, 0.8)
+        let imageData = UIImageJPEGRepresentation(image, 0.00000000000000001)
         let imageName = "\(Date().timeIntervalSince1970).jpeg"
         let metaData = FIRStorageMetadata()
         metaData.contentType = "image/jpeg"
