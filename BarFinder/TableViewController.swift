@@ -42,6 +42,7 @@ class TableViewController: UITableViewController  {
         navigationController?.navigationBar.titleTextAttributes =
             [NSForegroundColorAttributeName: UIColor.white]
         tabBarController?.tabBar.tintColor = UIColor.white
+        tabBarController?.tabBar.unselectedItemTintColor = UIColor.darkGray
         
     }
     
