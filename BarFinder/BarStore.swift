@@ -45,7 +45,7 @@ class BarStore {
         
         ref.child("Bars").observe(.value, with: { (snapshot) in
             self.allBars = []
-            print(snapshot.value)
+            print(snapshot.value as Any)
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshots {
                     if let barDict = snap.value as? Dictionary<String, Any> {

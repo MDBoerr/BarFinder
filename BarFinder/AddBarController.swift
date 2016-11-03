@@ -124,6 +124,7 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         imageView.image = ResizeImage(image: image, targetSize: CGSize(width: 400, height: 400))
+        
         ButtonIcon.alpha = 0.05
 //        let newImage = imageView.image
 //        barStore.imageUploadTo(image: newImage!)
