@@ -34,6 +34,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         addressLabel.text = bar?.address
+        navigationController?.isNavigationBarHidden = false
         imageView.image = bar.image
         ratingLabel.text = "Rating: \(bar!.rating)/10"
         
