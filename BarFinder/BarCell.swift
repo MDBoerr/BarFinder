@@ -13,5 +13,6 @@ class BarCell: UITableViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var imageLabel: UIImageView!
+    @IBOutlet var ratingLabel: UILabel!
     
 }
