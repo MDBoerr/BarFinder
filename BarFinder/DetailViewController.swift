@@ -33,7 +33,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         super.viewWillAppear(animated)
         addressLabel.text = bar?.address
         imageView.image = bar.image
-        ratingLabel.text = "Rating: \(bar!.rating)"
+        ratingLabel.text = "Rating: \(bar!.rating)/10"
         
     }
     func detailMap() {
