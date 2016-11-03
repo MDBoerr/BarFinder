@@ -116,18 +116,17 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
         let newBar = Bar(name: myName, address: myAddress, imageName: myImageName, latitude: myLatitude!, longitude: myLongitude!, rating: myRating)
         barStore.allBars.append(newBar)
         barStore.uploadTo(bar: newBar)
-        self.navigationController?.popViewController(animated: true)
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        ResizeImage(image: image, targetSize: CGSize(width: 40, height: 40))
-        imageView.image = image
         
+        imageView.image = ResizeImage(image: image, targetSize: CGSize(width: 400, height: 400))
         ButtonIcon.alpha = 0.05
-        let newImage = imageView.image
-        barStore.imageUploadTo(image: newImage!)
+//        let newImage = imageView.image
+//        barStore.imageUploadTo(image: newImage!)
         dismiss(animated: true, completion: nil)
     }
     func ResizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
