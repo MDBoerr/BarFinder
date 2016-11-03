@@ -60,7 +60,7 @@ class TableViewController: UITableViewController  {
         cell.nameLabel.text = name
         cell.addressLabel.text = address
         cell.imageLabel.image = currentBar.image
-        cell.ratingLabel.text = rating
+        cell.ratingLabel.text = "\(rating)/10"
         DispatchQueue.global().async {
             currentBar.loadImageOn(completion: { (image) in
                 DispatchQueue.main.async {
