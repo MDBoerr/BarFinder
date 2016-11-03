@@ -25,6 +25,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     override func loadView() {
         mapView = MKMapView()
         view = mapView
+        mapView.delegate = self
+        
         
         print("Shared instance \(barStore)")
         
@@ -118,5 +120,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             annotationBar.subtitle = bar.address
             mapView.addAnnotation(annotationBar)
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        var view: MKPinAnnotationView
+        view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: nil)
+        view.canShowCallout = true
+        //view.calloutOffset = CGPoint(x: -5, y: 5)
+        view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        return view
     }
 }
