@@ -22,6 +22,8 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var detailMapView: MKMapView!
     @IBOutlet var ratingLabel: UILabel!
+    var detailBar : Bar?
+    
     
     var bar : Bar! {
         didSet {
@@ -44,13 +46,18 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
         self.region = MKCoordinateRegion(center: self.longlat, span: MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001))
     }
-    
+    let color : UIColor = #colorLiteral(red: 0.2901960784, green: 0.5647058824, blue: 0.8862745098, alpha: 1)
+
     override func viewDidLoad() {
         super.viewDidLoad()
 //        detailMapView = MKMapView()
         locationManager.delegate = self
         detailMapView.delegate = self
-        
+        navigationController?.isNavigationBarHidden = false
+        navigationController?.navigationBar.barTintColor = color
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: UIColor.white]
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         detailMapView.showsUserLocation = true

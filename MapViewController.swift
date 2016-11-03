@@ -19,6 +19,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var longlat: CLLocationCoordinate2D!
     var region: MKCoordinateRegion!
     var userLocation: CLLocation!
+    var detailViewC : DetailViewController! = DetailViewController()
     
     var barArray : [Bar] = []
     
@@ -87,6 +88,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
+        navigationController?.isNavigationBarHidden = true
         
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
@@ -95,6 +97,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         barArray = barStore.allBars
         print("This is my array: \(barArray)")
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
     }
     func mapTypeChanged(segControl: UISegmentedControl) {
         switch segControl.selectedSegmentIndex {
@@ -130,4 +136,23 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         return view
     }
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        performSegue(withIdentifier: "AnnotationDetails", sender: self)
+       // shouldPerformSegue(withIdentifier: "AnnotationDetails", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let test = mapView.selectedAnnotations[0].title!
+        if segue.identifier == "AnnotationDetails" {
+            for i in barStore.allBars {
+                if i.name == test {
+                    let detailViewController = segue.destination as! DetailViewController
+                    detailViewController.hidesBottomBarWhenPushed = true
+                    detailViewController.bar = i
+                }
+            }
+        }
+
+    }
+            
 }
