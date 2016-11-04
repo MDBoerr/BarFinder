@@ -18,7 +18,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var locationManager = CLLocationManager()
     var longlat: CLLocationCoordinate2D!
     var region: MKCoordinateRegion!
-    var userLocation: CLLocation!
+ //   var userLocation: CLLocation!
     var detailViewC : DetailViewController! = DetailViewController()
     
     var barArray : [Bar] = []
@@ -129,12 +129,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        } else {
         var view: MKPinAnnotationView
         view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: nil)
         view.canShowCallout = true
         //view.calloutOffset = CGPoint(x: -5, y: 5)
         view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         return view
+        }
     }
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         performSegue(withIdentifier: "AnnotationDetails", sender: self)
