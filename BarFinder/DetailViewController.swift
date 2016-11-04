@@ -64,7 +64,23 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         detailMapView.showsUserLocation = true
         
         dropPinForSelectedBar()
-
+       // addressLabel.center.x = self.view.frame.width + 3000
+        //imageView.center.x = self.view.frame.width + 3000
+    //    UIView.animate(withDuration: 2.0, delay: 0, usingSpringWithDamping: 5.0, initialSpringVelocity: 9.0, options: UIViewAnimationOptions(rawValue: 0), animations: ({
+    //        self.addressLabel.center.x = self.view.frame.width / 2
+    //        self.imageView.center.x = self.view.frame.width / 2
+            
+            
+    //    }), completion: nil)
+        self.imageView.layer.borderWidth = 7.5
+        self.imageView.layer.borderColor = color.cgColor
+        UIView.animate(withDuration: 0.4, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
+            self.addressLabel.center.x += self.view.frame.height
+            self.imageView.center.y += self.view.frame.height
+            self.ratingLabel.center.x -= self.view.frame.height
+            self.detailMapView.center.y -= self.view.frame.height
+            
+        }, completion: nil)
     }
     func dropPinForSelectedBar() {
         
@@ -82,6 +98,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             detailMapView.addAnnotation(annotationBar)
         }
     }
+
 
 //
 
