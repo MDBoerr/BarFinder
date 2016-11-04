@@ -18,6 +18,7 @@ class TableViewController: UITableViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       // tableView.delegate = self
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action:#selector(refreshData), for: UIControlEvents.valueChanged)
         tableView.addSubview(refreshControl!)
@@ -71,7 +72,14 @@ class TableViewController: UITableViewController  {
         }
         return cell
     }
-    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.alpha = 0
+   //     UIView.animate(withDuration: 1.0)
+        UIView.animate(withDuration: 1.0, animations: {
+            cell.alpha = 1.0
+        })
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "BarDetails" {
