@@ -77,6 +77,17 @@ class AddBarController: UIViewController, UINavigationControllerDelegate, CLLoca
         
         navigationItem.title = "Add a new bar"
         SaveButton.isEnabled = false
+        
+        self.nameField.center.x = self.view.frame.width + (0.5 * nameField.frame.width)
+        self.addressField.center.x = self.view.frame.width + (0.5 * addressField.frame.width)
+        self.ratingField.center.x = self.view.frame.width + (0.5 * ratingField.frame.width)
+        
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: UIViewAnimationOptions.curveLinear, animations: {
+            self.nameField.center.x = self.view.center.x
+            self.addressField.center.x = self.view.center.x
+            self.ratingField.center.x = self.view.center.x
+        }, completion: nil)
+        
     }
     
     @IBAction func saveButtonEnabled() {
