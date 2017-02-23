@@ -77,6 +77,7 @@ class TableViewController: UITableViewController  {
    //     UIView.animate(withDuration: 1.0)
         UIView.animate(withDuration: 1.0, animations: {
             cell.alpha = 1.0
+            
         })
     }
 

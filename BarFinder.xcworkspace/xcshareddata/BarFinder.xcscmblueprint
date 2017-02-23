@@ -1,0 +1,44 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9A4A5B4431654F488A4AED5E2EA6518A7976C47A+++8CDCF43",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9A4A5B4431654F488A4AED5E2EA6518A7976C47A+++9EDDAE1" : 9223372036854775807,
+    "9A4A5B4431654F488A4AED5E2EA6518A7976C47A+++61FCF10" : 9223372036854775807,
+    "9A4A5B4431654F488A4AED5E2EA6518A7976C47A+++A627F36" : 9223372036854775807,
+    "9A4A5B4431654F488A4AED5E2EA6518A7976C47A+++8CDCF43" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "349B48B4-54A4-4222-819D-248E90441855",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9A4A5B4431654F488A4AED5E2EA6518A7976C47A+++9EDDAE1" : "BarFinder\/",
+    "9A4A5B4431654F488A4AED5E2EA6518A7976C47A+++61FCF10" : "",
+    "9A4A5B4431654F488A4AED5E2EA6518A7976C47A+++A627F36" : "",
+    "9A4A5B4431654F488A4AED5E2EA6518A7976C47A+++8CDCF43" : "BarFinder%20copy\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BarFinder",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BarFinder.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AppAcademyNL\/BarFinder.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9A4A5B4431654F488A4AED5E2EA6518A7976C47A+++61FCF10"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AppAcademyNL\/BarFinder.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9A4A5B4431654F488A4AED5E2EA6518A7976C47A+++8CDCF43"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AppAcademyNL\/BarFinder.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9A4A5B4431654F488A4AED5E2EA6518A7976C47A+++9EDDAE1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AppAcademyNL\/CheckpointIBM.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9A4A5B4431654F488A4AED5E2EA6518A7976C47A+++A627F36"
+    }
+  ]
+}

@@ -15,4 +15,5 @@ class BarCell: UITableViewCell {
     @IBOutlet var imageLabel: UIImageView!
     @IBOutlet var ratingLabel: UILabel!
     
+
 }
